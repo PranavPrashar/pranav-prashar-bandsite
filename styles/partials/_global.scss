@@ -1,0 +1,28 @@
+
+@font-face {
+    font-family: avenirnext-bold ;
+    src: url(/assets/fonts/AvenirNextLTPro-Bold.otf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: avenirnext-regular;
+    src: url(/assets/fonts/AvenirNextLTPro-Regular.otf);
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: avenirnext-demi;
+    src: url(/assets/fonts/AvenirNextLTPro-Demi.otf);
+    font-weight: 600;
+}
+
+$bandsite-black:#323232;
+$avenirnext-regular: 'avenirnext-regular';
+$avenirnext-demi:'avenirnext-demi';
+$avenirnext-bold:'avenirnext-bold';
+$silver:#afafaf;
+$mercury:#e1e1e1;
+$alabaster:#fafafa;

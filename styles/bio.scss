@@ -1,0 +1,503 @@
+@use './partials/global';
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+@mixin tablet {
+    @media (min-width:768px) {
+        @content;
+    }
+}
+
+
+
+// @font-face {
+//     font-family: avenirnext-bold;
+//     src: url(/assets/fonts/AvenirNextLTPro-Bold.otf);
+//     font-weight: bold;
+//     font-style: normal;
+// }
+
+// @font-face {
+//     font-family: avenirnext-regular;
+//     src: url(/assets/fonts/AvenirNextLTPro-Regular.otf);
+//     font-style: normal;
+//     font-weight: 400;
+// }
+
+// @font-face {
+//     font-family: avenirnext-demi;
+//     src: url(/assets/fonts/AvenirNextLTPro-Demi.otf);
+//     font-weight: 600;
+// }
+
+body {
+    margin: 0;
+}
+
+.uppercase {
+    text-transform: uppercase !important;
+}
+
+// @mixin mobile {
+//     @media (min-width:320px) and (max-width:767px) {
+//         background-color:red;
+//         @content
+//     }
+// }
+.nav-bar {
+    background-color: global.$bandsite-black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+
+    @include tablet {
+        justify-content: flex-start;
+        align-items: baseline;
+        flex-direction: row;
+
+        // padding-left: 1rem;
+        &-top {
+            align-items: baseline;
+            align-content: center;
+            justify-content: center;
+            vertical-align: middle;
+        }
+
+        &__heading {
+            font-family: global.$avenirnext-regular ;
+            // margin: 0.5rem 0 0 0;
+            padding: 1rem;
+            text-transform: uppercase;
+            // justify-content: center;
+            align-content: center;
+            align-items: baseline;
+        }
+
+        &__menu-tablet {
+            // background-color: grey;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: baseline;
+            width: 25% !important;
+            padding-left: 1rem;
+        }
+
+        &__list {
+            justify-content: flex-start;
+            align-items: flex-start;
+            // background-color: beige;
+
+            &-container-selected {
+                // width: 25%;
+                // background-color: red;
+                border-bottom: none !important;
+            }
+
+            &-item {
+                // width: 25%;
+                width: 100%;
+                padding-right: 2rem;
+                border: none;
+            }
+        }
+    }
+
+    &-top {
+        margin: 0;
+    }
+
+    &__heading {
+        font-family: global.$avenirnext-regular ;
+        margin: 0.5rem 0 0 0;
+        text-transform: uppercase;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        // background: blue;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+        text-decoration: none;
+        list-style: none;
+        padding: 0;
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            width: 50%;
+            // background: blue;
+            text-align: center;
+            // border-bottom: 0.25rem white solid;
+        }
+
+        &-container-selected {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            width: 50%;
+            // background: blue;
+            text-align: center;
+            border-bottom: 0.25rem white solid;
+        }
+
+        &-item {
+            text-decoration: none;
+            list-style: none;
+            color: white;
+            font-family: global.$avenirnext-demi;
+            padding-bottom: 0.50rem;
+
+
+        }
+    }
+}
+
+.bees-knees {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: url(/assets/images/hero-bio.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 80%;
+    height: 10rem;
+
+    &__header {
+        padding-left: 1rem;
+        color: white;
+        font-family: global.$avenirnext-demi;
+        text-transform: capitalize;
+    }
+
+    @include tablet {
+        height: 60vh;
+
+        &__header {
+            font-size: 36px;
+            line-height: 44px;
+            font-family: global.$avenirnext-bold;
+        }
+    }
+}
+
+.about-musicians {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+    &__header {
+        font-family: global.$avenirnext-demi;
+        color: global.$bandsite-black;
+        margin: 0.25rem 0 0.25rem 1rem;
+        font-size: 24px;
+        line-height: 32px;
+
+        &-smaller {
+            line-height: 22px;
+            font-family: global.$avenirnext-demi;
+            font-size: 14px;
+            text-transform: capitalize;
+            padding: 0.25rem 0 0.25rem 1rem;
+        }
+    }
+
+    &_img-tablet {
+        display: none;
+    }
+
+    &__img-band {
+        width: auto;
+        margin: 0.5rem 1rem;
+    }
+
+    &__qoute {
+        font-family: global.$avenirnext-demi;
+        line-height: 22px;
+        font-size: 13px;
+        margin: 0 1rem 0.25rem 1rem
+    }
+
+    &__paragraph {
+        font-family: global.$avenirnext-regular;
+        font-size: 13px;
+        line-height: 18px;
+        margin: 0 1rem 1rem 1rem;
+
+    }
+
+    &-tablet__view {
+        display: none;
+    }
+
+    &__header-tablet {
+        display: none;
+    }
+
+    @include tablet {
+
+        &__header {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding-top: 1rem;
+        }
+
+        &_img-tablet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            // background: blue;
+        }
+
+        &__img-band-tablet {
+            width: 75%;
+        }
+
+        &__img-band {
+            display: none;
+            // text-align: center;
+            // flex-direction: column;
+            // width: 80%;
+            // justify-content: center;
+            // align-items: center;
+            // align-content: center;
+        }
+
+        &__qoute {
+            margin: 0.25rem 6.5rem 0.25rem 6.5rem;
+            // color: red;
+            font-size: 24px;
+
+            &_lower {
+                font-size: 14px;
+                line-height: 20px;
+                font-family: global.$avenirnext-demi;
+            }
+        }
+
+        .tablet-paragraph {
+            display: none;
+            // margin: 0.25rem 6rem 0.25rem 6rem;
+        }
+
+        &-tablet__view {
+            display: flex;
+            margin: 0.25rem 6rem 0.25rem 6rem;
+            align-items: baseline;
+        }
+
+        &__header-tablet {
+            font-family: global.$avenirnext-demi;
+            color: global.$bandsite-black;
+            text-transform: capitalize;
+            display: flex;
+            // color: blue;
+            display: flex;
+            flex-direction: row;
+            padding-left: 6.5rem;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+
+        &__header-smaller {
+            color: blue;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+}
+
+.photo-gallery {
+    display: flex;
+    flex-direction: column;
+    background-color: global.$alabaster;
+    flex-wrap: none;
+    // margin: 0 1rem 0.25rem 1rem;
+
+    &__mobile {
+        width: auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    &__header {
+        font-family: global.$avenirnext-demi;
+        color: global.$bandsite-black;
+        margin: 0.25rem 0 0 1rem;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    &__img {
+        justify-content: center;
+        width: 94%;
+        margin: 0.5rem 1rem;
+
+    }
+
+    @include tablet {
+
+        // background-color: blue;
+        &__header {
+            padding-top: 2rem;
+            font-size: 24px;
+        }
+
+        &__mobile {
+            display: none;
+        }
+
+        // .mobile_gallery{
+        //     color:red;
+        // }
+        &__tablet {
+            // background-color: red;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-direction: row;
+            margin: 1rem 1rem;
+
+            &-container {
+                display: flex;
+                flex-wrap: wrap;
+                // margin: 0.5rem 0.5rem; 
+                align-items: center;
+                justify-content: center;
+
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: global.$bandsite-black;
+    display: flex;
+    flex-direction: column;
+
+    &-testing {
+        justify-content: flex-end;
+
+    }
+
+    &__header {
+        color: white;
+        font-family: global.$avenirnext-bold;
+        text-size-adjust: 36px;
+        line-height: 44px;
+        margin: 1rem 0 1rem 1rem;
+    }
+
+    &__social-media {
+        // margin: 0 0 0 1rem ;
+        display: flex;
+        justify-content: flex-start;
+        padding: 0;
+        margin-left: 1rem;
+
+        &__icon {
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+
+    &-header__small {
+        color: white;
+        font-family: global.$avenirnext-demi;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: capitalize;
+        margin-left: 1rem;
+        margin: 0.25rem 0 0.25rem 1rem;
+    }
+
+    &-address {
+        color: white;
+        margin: 1rem 0 0.25rem 1rem;
+
+        &__header {
+            text-transform: capitalize;
+            margin: 0;
+            font-family: global.$avenirnext-regular;
+            font-size: 14px;
+            line-height: 20px;
+            text-transform: capitalize;
+
+            &-uppercase {
+                text-transform: uppercase;
+            }
+
+            &-extra {
+                padding-top: 1rem;
+                text-transform: none;
+            }
+        }
+    }
+
+
+    &-three {
+        padding-top: 1rem;
+    }
+
+    &-four {
+        padding-top: 1rem;
+    }
+
+    &-lower {
+        padding-left: 1rem;
+        padding-top: 1rem;
+
+        &__header {
+            font-size: 24px;
+            line-height: 32px;
+            font-family: global.$avenirnext-regular;
+            color: white;
+            // padding-left: 1rem;
+        }
+
+        &__copyright {
+            font-size: 14px;
+            line-height: 22px;
+            font-family: global.$avenirnext-regular;
+            color: white;
+            // padding-left: 1rem;
+        }
+    }
+}
+
+
+.message {
+    border: solid 1px black;
+    transition-timing-function: sta
+}
+
+.succsess {
+    @extend .message;
+    border-color: green;
+    color: green;
+}
