@@ -12,6 +12,13 @@
     }
 }
 
+@mixin desktop{
+    @media (min-width: 1080px){
+        @content;
+    }
+}
+
+
 
 
 // @font-face {
@@ -411,6 +418,10 @@ body {
         text-size-adjust: 36px;
         line-height: 44px;
         margin: 1rem 0 1rem 1rem;
+
+        @include tablet{
+            display: none;
+        }
     }
 
     &__social-media {
@@ -419,6 +430,10 @@ body {
         justify-content: flex-start;
         padding: 0;
         margin-left: 1rem;
+
+        @include tablet{
+            display: none;
+        }
 
         &__icon {
             padding-right: 1rem;
@@ -459,13 +474,25 @@ body {
         }
     }
 
+    &-two{
+        @include tablet{
+            display: none;
+        }
 
+    }
     &-three {
         padding-top: 1rem;
+        @include tablet{
+            display: none;
+        }
     }
 
     &-four {
         padding-top: 1rem;
+        @include tablet{
+            display: none;
+        }
+
     }
 
     &-lower {
@@ -487,17 +514,102 @@ body {
             color: white;
             // padding-left: 1rem;
         }
+        @include tablet{
+            display: none;
+        }
+    }
+
+    
+    
+    
+}
+
+.footer-mobile{
+    display: none;
+    // background-color: blue;
+    @include tablet{
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+    
+        padding: 0.5rem 1rem;
+
+        &__row{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    &__header{
+        display: flex;
+        flex-direction: row;
+        color: white;
+        font-family: global.$avenirnext-bold;
+        font-size: 36px;
+        line-height: 44px;
+        // margin: 1rem 0 1rem 1rem;
+    }
+    &__social{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__icon{
+        padding-left: 1rem;
+    }
+
+    &-left{
+        display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+
+    &-right{
+        display: flex;
+        flex-direction: row;
+        // justify-content: baseline;
+        // justify-content: flex-end;
+        align-items: baseline;
+        // padding-right: 1rem;
+    }
+
+    }
+}
+
+.footer-tablet__team {
+    display: none;
+
+    @include tablet{
+        display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+    &__left{
+        display: flex;
+        flex-direction: column;
+    }
+    &__center{
+        display: flex;
+        flex-direction: column;
+    }
+    &__right{
+        display: flex;
+        flex-direction: column;
+    }
+    }
+    
+}
+
+.footer-tablet__lower{
+    display: none;
+    @include tablet{
+        display: flex;
+        padding: 1rem 0 0 1rem  ;
     }
 }
 
 
-.message {
-    border: solid 1px black;
-    transition-timing-function: sta
-}
 
-.succsess {
-    @extend .message;
-    border-color: green;
-    color: green;
-}
+
