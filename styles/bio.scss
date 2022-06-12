@@ -1,714 +1,638 @@
-@use './partials/global';
+@use "./partials/global";
 
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 @mixin tablet {
-    @media (min-width:768px) {
-        @content;
-    }
+  @media (min-width: 768px) {
+    @content;
+  }
 }
 
 @mixin desktop {
-    @media (min-width: 1280px) {
-        @content;
-    }
+  @media (min-width: 1280px) {
+    @content;
+  }
 }
 
-
 body {
-    margin: 0;
+  margin: 0;
 }
 
 .uppercase {
-    @include global.uppercase;
+  @include global.uppercase;
 }
 
-
 .nav-bar {
-    background-color: global.$bandsite-black;
-    @include global.flexBox-column;
-    justify-content: center;
-    align-items: center;
-    color: white;
+  background-color: global.$bandsite-black;
+  @include global.flexBox-column;
+  justify-content: center;
+  align-items: center;
+  color: white;
 
+  @include tablet {
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: row;
 
-
-    @include tablet {
-        justify-content: flex-start;
-        align-items: baseline;
-        flex-direction: row;
-
-        // padding-left: 1rem;
-        &__top {
-            align-items: baseline;
-            align-content: center;
-            justify-content: center;
-            vertical-align: middle;
-        }
-
-        &__heading {
-            font-family: global.$avenirnext-regular ;
-            // margin: 0.5rem 0 0 0;
-            padding: 1rem;
-            // text-transform: uppercase;
-            @include global.uppercase;
-            // justify-content: center;
-            align-content: center;
-            align-items: baseline;
-
-        }
-
-        &__menu-tablet {
-            // background-color: grey;
-            @include global.flexBox-row;
-            justify-content: space-evenly;
-            align-items: baseline;
-            width: 25% !important;
-            padding-left: 1rem;
-        }
-
-        &__list {
-            justify-content: flex-start;
-            align-items: flex-start;
-            margin-bottom: 0;
-
-            &-container-selected {
-                // width: 25%;
-                // background-color: red;
-                @include global.flexBox-column;
-                flex-wrap: nowrap;
-                justify-content: space-between;
-                text-align: center;
-                border-bottom: 0.25rem white solid;
-            }
-
-            &-item {
-                // width: 25%;
-                width: 100%;
-                padding-right: 2rem;
-                border: none;
-            }
-        }
-
-    }
-
-    @include desktop {
-        align-items: center;
-
-    }
-
-    &-top {
-        margin: 0;
+    // padding-left: 1rem;
+    &__top {
+      align-items: baseline;
+      align-content: center;
+      justify-content: center;
+      vertical-align: middle;
     }
 
     &__heading {
-        font-family: global.$avenirnext-regular ;
-        margin: 0.5rem 0 0 0;
-        // text-transform: uppercase;
-        @include global.uppercase;
-
-        @include desktop {
-            padding-left: 10rem;
-            font-size: 36px;
-        }
+      font-family: global.$avenirnext-regular;
+      // margin: 0.5rem 0 0 0;
+      padding: 1rem;
+      // text-transform: uppercase;
+      @include global.uppercase;
+      // justify-content: center;
+      align-content: center;
+      align-items: baseline;
     }
 
-    &__menu {
-        @include global.flexBox-row;
-        width: 100%;
-        justify-content: space-between;
-        @include desktop {
-            font-size: 1rem;
-        }
+    &__menu-tablet {
+      // background-color: grey;
+      @include global.flexBox-row;
+      justify-content: space-evenly;
+      align-items: baseline;
+      width: 25% !important;
+      padding-left: 1rem;
     }
 
     &__list {
-        @include global.flexBox-row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin-bottom: 0;
+
+      &-container-selected {
+        // width: 25%;
+        // background-color: red;
+        @include global.flexBox-column;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        text-align: center;
+        border-bottom: 0.25rem white solid;
+      }
+
+      &-item {
+        // width: 25%;
         width: 100%;
-        justify-content: space-evenly;
-        text-decoration: none;
-        list-style: none;
-        padding: 0;
-        // Margin bottom to remove the white space bellow so white line is level with div
-        margin-bottom: 0;
-
-        &-container {
-            // display: flex;
-            // flex-direction: column;
-            @include global.flexBox-column;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            width: 50%;
-            // background: blue;
-            text-align: center;
-            // border-bottom: 0.25rem white solid;
-        }
-
-        &-container-selected {
-            border-bottom: 0.25rem white solid;
-        }
-
-        &-item {
-            text-decoration: none;
-            list-style: none;
-            color: white;
-            font-family: global.$avenirnext-demi;
-            padding-bottom: 0.50rem;
-            
-
-
-        }
-
-        @include desktop{
-            &-container-selected{
-                // padding-bottom: 1vh;
-            }
-        }
+        padding-right: 2rem;
+        border: none;
+      }
     }
+  }
+
+  @include desktop {
+    align-items: center;
+  }
+
+  &-top {
+    margin: 0;
+  }
+
+  &__heading {
+    font-family: global.$avenirnext-regular;
+    margin: 0.5rem 0 0 0;
+    // text-transform: uppercase;
+    @include global.uppercase;
+
+    @include desktop {
+      padding-left: 10rem;
+      font-size: 36px;
+    }
+  }
+
+  &__menu {
+    @include global.flexBox-row;
+    width: 100%;
+    justify-content: space-between;
+
+    @include desktop {
+      font-size: 1rem;
+    }
+  }
+
+  &__list {
+    @include global.flexBox-row;
+    width: 100%;
+    justify-content: space-evenly;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    // Margin bottom to remove the white space bellow so white line is level with div
+    margin-bottom: 0;
+
+    &-container {
+      // display: flex;
+      // flex-direction: column;
+      @include global.flexBox-column;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      width: 50%;
+      // background: blue;
+      text-align: center;
+      // border-bottom: 0.25rem white solid;
+    }
+
+    &-container-selected {
+      border-bottom: 0.25rem white solid;
+    }
+
+    &-item {
+      text-decoration: none;
+      list-style: none;
+      color: white;
+      font-family: global.$avenirnext-demi;
+      padding-bottom: 0.5rem;
+    }
+
+    @include desktop {
+      &-container-selected {
+        // padding-bottom: 1vh;
+      }
+    }
+  }
 }
 
 .bees-knees {
-    // display: flex;
-    // flex-direction: column;
-    @include global.flexBox-column;
-    align-items: flex-start;
-    justify-content: center;
-    background: url(/assets/images/hero-bio.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 80%;
-    height: 10rem;
+  @include global.flexBox-column;
+  align-items: flex-start;
+  justify-content: center;
+  background: url(/assets/images/hero-bio.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 80%;
+  height: 10rem;
+
+  &__header {
+    padding-left: 1rem;
+    color: white;
+    font-family: global.$avenirnext-demi;
+    text-transform: capitalize;
+  }
+
+  @include tablet {
+    height: 60vh;
 
     &__header {
-        padding-left: 1rem;
-        color: white;
-        font-family: global.$avenirnext-demi;
-        text-transform: capitalize;
+      font-size: 36px;
+      line-height: 44px;
+      font-family: global.$avenirnext-bold;
     }
+  }
 
-    @include tablet {
-        height: 60vh;
-
-        &__header {
-            font-size: 36px;
-            line-height: 44px;
-            font-family: global.$avenirnext-bold;
-        }
+  @include desktop {
+    &__header {
+      padding-left: 10rem;
+      font-size: 60px;
+      line-height: 68px;
     }
-
-    @include desktop {
-        &__header {
-            padding-left: 10rem;
-            font-size: 60px;
-            line-height: 68px;
-
-        }
-    }
+  }
 }
 
 .about-musicians {
-    // display: flex;
-    // flex-direction: column;
-    @include global.flexBox-column;
-    flex-wrap: nowrap;
-    padding-top: 1.5rem;
+  // display: flex;
+  // flex-direction: column;
+  @include global.flexBox-column;
+  flex-wrap: nowrap;
+  padding-top: 1.5rem;
 
+  &__header {
+    font-family: global.$avenirnext-demi;
+    color: global.$bandsite-black;
+    margin: 0.25rem 0 0.25rem 1rem;
+    font-size: 36px;
+    line-height: 44px;
+
+    &-smaller {
+      line-height: 22px;
+      font-family: global.$avenirnext-demi;
+      font-size: 14px;
+      text-transform: capitalize;
+      padding: 0.25rem 0 0.25rem 1rem;
+    }
+  }
+
+  &_img-tablet {
+    display: none;
+  }
+
+  &__img-band {
+    width: auto;
+    margin: 0.5rem 1rem;
+  }
+
+  &__qoute {
+    font-family: global.$avenirnext-demi;
+    line-height: 22px;
+    font-size: 13px;
+    margin: 0 1rem 0.25rem 1rem;
+  }
+
+  &__paragraph {
+    font-family: global.$avenirnext-regular;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0 1rem 1rem 1rem;
+  }
+
+  &-tablet__view {
+    display: none;
+  }
+
+  &__header-tablet {
+    display: none;
+  }
+
+  @include tablet {
     &__header {
-        font-family: global.$avenirnext-demi;
-        color: global.$bandsite-black;
-        margin: 0.25rem 0 0.25rem 1rem;
-        font-size: 36px;
-        line-height: 44px;
-
-        &-smaller {
-            line-height: 22px;
-            font-family: global.$avenirnext-demi;
-            font-size: 14px;
-            text-transform: capitalize;
-            padding: 0.25rem 0 0.25rem 1rem;
-        }
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding-top: 1rem;
     }
 
     &_img-tablet {
-        display: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__img-band-tablet {
+      width: 75%;
     }
 
     &__img-band {
-        width: auto;
-        margin: 0.5rem 1rem;
+      display: none;
     }
 
     &__qoute {
+      margin: 0.25rem 6.5rem 0.25rem 6.5rem;
+      // color: red;
+      font-size: 28px;
+
+      &--lower {
+        font-size: 1rem;
+        line-height: 20px;
         font-family: global.$avenirnext-demi;
-        line-height: 22px;
-        font-size: 13px;
-        margin: 0 1rem 0.25rem 1rem
+      }
     }
 
-    &__paragraph {
-        font-family: global.$avenirnext-regular;
-        font-size: 13px;
-        line-height: 18px;
-        margin: 0 1rem 1rem 1rem;
-
+    .tablet-paragraph {
+      display: none;
+      // margin: 0.25rem 6rem 0.25rem 6rem;
     }
 
     &-tablet__view {
-        display: none;
+      display: flex;
+      margin: 0.25rem 6rem 0.25rem 6rem;
+      align-items: baseline;
     }
 
     &__header-tablet {
-        display: none;
+      font-family: global.$avenirnext-demi;
+      color: global.$bandsite-black;
+      text-transform: capitalize;
+      display: flex;
+      @include global.flexBox-row;
+      padding-left: 6.5rem;
+      justify-content: flex-start;
+      align-items: center;
     }
 
-    @include tablet {
+    &__header-smaller {
+      color: blue;
+      @include global.flexBox-column;
+    }
+  }
 
-        &__header {
-            // display: flex;
-            // flex-direction: row;
-            // @include global.flexBox-row;
-            align-items: flex-end;
-            justify-content: flex-start;
-            padding-top: 1rem;
-        }
-
-        &_img-tablet {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            // background: blue;
-        }
-
-        &__img-band-tablet {
-            width: 75%;
-        }
-
-        &__img-band {
-            display: none;
-            // text-align: center;
-            // flex-direction: column;
-            // width: 80%;
-            // justify-content: center;
-            // align-items: center;
-            // align-content: center;
-        }
-
-        &__qoute {
-            margin: 0.25rem 6.5rem 0.25rem 6.5rem;
-            // color: red;
-            font-size: 28px;
-
-            &--lower {
-                font-size: 1rem;
-                line-height: 20px;
-                font-family: global.$avenirnext-demi;
-            }
-        }
-
-        .tablet-paragraph {
-            display: none;
-            // margin: 0.25rem 6rem 0.25rem 6rem;
-        }
-
-        &-tablet__view {
-            display: flex;
-            margin: 0.25rem 6rem 0.25rem 6rem;
-            align-items: baseline;
-        }
-
-        &__header-tablet {
-            font-family: global.$avenirnext-demi;
-            color: global.$bandsite-black;
-            text-transform: capitalize;
-            display: flex;
-            // display: flex;
-            // flex-direction: row;
-            @include global.flexBox-row;
-            padding-left: 6.5rem;
-            justify-content: flex-start;
-            align-items: center;
-        }
-
-
-        &__header-smaller {
-            color: blue;
-            @include global.flexBox-column;
-        }
+  @include desktop {
+    &__header {
+      margin-left: 15rem;
     }
 
-    @include desktop {
-        &__header {
-            margin-left: 15rem;
-        }
-
-        &__img-band-tablet {
-            width: 50%;
-        }
-
-        &__qoute {
-            margin: 0.25rem 30vw 0.25rem 25vw;
-            text-align: left;
-            //trbl
-        }
-
-        &__header-tablet {
-            padding-left: 25vw;
-            font-size: 24px;
-
-        }
-
-        &__paragraph {
-            font-family: global.$avenirnext-regular;
-            font-size: 18px;
-            line-height: 32px;
-            // margin: 0 1rem 1rem 1rem;
-            //trbl
-
-        }
-
-        .paragraph-left {
-            padding-left: 20vw;
-        }
-
-        .paragraph-right {
-            padding-right: 20vw;
-        }
-
-
-
+    &__img-band-tablet {
+      width: 50%;
     }
 
+    &__qoute {
+      margin: 0.25rem 30vw 0.25rem 25vw;
+      text-align: left;
+      //trbl
+    }
 
+    &__header-tablet {
+      padding-left: 25vw;
+      font-size: 24px;
+    }
 
+    &__paragraph {
+      font-family: global.$avenirnext-regular;
+      font-size: 18px;
+      line-height: 32px;
+    }
+
+    .paragraph-left {
+      padding-left: 20vw;
+    }
+
+    .paragraph-right {
+      padding-right: 20vw;
+    }
+  }
 }
 
 .photo-gallery {
-    // display: flex;
-    // flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  @include global.flexBox-column;
+  background-color: global.$alabaster;
+  flex-wrap: none;
+  padding-top: 1rem;
+  // margin: 0 1rem 0.25rem 1rem;
+
+  &__mobile {
+    width: auto;
+    justify-content: center;
+    align-items: center;
     @include global.flexBox-column;
-    background-color: global.$alabaster;
-    flex-wrap: none;
-    padding-top: 1rem;
-    // margin: 0 1rem 0.25rem 1rem;
+  }
+
+  &__header {
+    font-family: global.$avenirnext-demi;
+    color: global.$bandsite-black;
+    margin: 0.25rem 0 0 1rem;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &__img {
+    justify-content: center;
+    width: 94%;
+    margin: 0.5rem 1rem;
+  }
+
+  @include tablet {
+    &__header {
+      padding-top: 2rem;
+      font-size: 24px;
+    }
 
     &__mobile {
-        width: auto;
-        // flex-direction: column;
-        justify-content: center;
+      display: none;
+    }
+
+    // .mobile_gallery{
+    //     color:red;
+    // }
+    &__tablet {
+      justify-content: flex-start;
+      align-items: flex-start;
+      @include global.flexBox-row;
+      margin: 1rem 1rem;
+
+      &-container {
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        // display: flex;
-        @include global.flexBox-column;
-    }
-
-    &__header {
-        font-family: global.$avenirnext-demi;
-        color: global.$bandsite-black;
-        margin: 0.25rem 0 0 1rem;
-        font-size: 24px;
-        line-height: 32px;
-    }
-
-    &__img {
         justify-content: center;
-        width: 94%;
-        margin: 0.5rem 1rem;
+      }
+    }
+  }
 
+  @include desktop {
+    &__header {
+      font-size: 36px;
+      line-height: 44px;
+      padding-left: 10rem;
     }
 
-    @include tablet {
-
-        // background-color: blue;
-        &__header {
-            padding-top: 2rem;
-            font-size: 24px;
-        }
-
-        &__mobile {
-            display: none;
-        }
-
-        // .mobile_gallery{
-        //     color:red;
-        // }
-        &__tablet {
-            // background-color: red;
-            // display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            // flex-direction: row;
-            @include global.flexBox-row;
-            margin: 1rem 1rem;
-
-            &-container {
-                display: flex;
-                flex-wrap: wrap;
-                // margin: 0.5rem 0.5rem; 
-                align-items: center;
-                justify-content: center;
-
-            }
-        }
+    &__tablet {
+      margin: 1rem 10rem;
     }
-
-    @include desktop {
-
-        &__header {
-            font-size: 36px;
-            line-height: 44px;
-            padding-left: 10rem;
-
-        }
-
-        &__tablet {
-            margin: 1rem 10rem;
-        }
-    }
+  }
 }
 
 .footer {
-    background-color: global.$bandsite-black;
-    // display: flex;
-    // flex-direction: column;
-    @include global.flexBox-column;
+  background-color: global.$bandsite-black;
+  @include global.flexBox-column;
 
-    &-testing {
-        justify-content: flex-end;
+  &-testing {
+    justify-content: flex-end;
+  }
 
+  &__header {
+    color: white;
+    font-family: global.$avenirnext-bold;
+    text-size-adjust: 36px;
+    line-height: 44px;
+    margin: 1rem 0 1rem 1rem;
+
+    @include tablet {
+      display: none;
     }
+  }
+
+  &__social-media {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin-left: 1rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    &__icon {
+      padding-right: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+  &-header__small {
+    color: white;
+    font-family: global.$avenirnext-demi;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: capitalize;
+    margin-left: 1rem;
+    margin: 0.25rem 0 0.25rem 1rem;
+  }
+
+  &-address {
+    color: white;
+    margin: 1rem 0 0.25rem 1rem;
 
     &__header {
-        color: white;
-        font-family: global.$avenirnext-bold;
-        text-size-adjust: 36px;
-        line-height: 44px;
-        margin: 1rem 0 1rem 1rem;
+      text-transform: capitalize;
+      margin: 0;
+      font-family: global.$avenirnext-regular;
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: capitalize;
 
-        @include tablet {
-            display: none;
-        }
-    }
+      &-uppercase {
+        @include global.uppercase;
+      }
 
-    &__social-media {
-        // margin: 0 0 0 1rem ;
-        display: flex;
-        justify-content: flex-start;
-        padding: 0;
-        margin-left: 1rem;
-
-        @include tablet {
-            display: none;
-        }
-
-        &__icon {
-            padding-right: 1rem;
-            padding-bottom: 1rem;
-        }
-    }
-
-    &-header__small {
-        color: white;
-        font-family: global.$avenirnext-demi;
-        font-size: 14px;
-        line-height: 20px;
-        text-transform: capitalize;
-        margin-left: 1rem;
-        margin: 0.25rem 0 0.25rem 1rem;
-    }
-
-    &-address {
-        color: white;
-        margin: 1rem 0 0.25rem 1rem;
-
-        &__header {
-            text-transform: capitalize;
-            margin: 0;
-            font-family: global.$avenirnext-regular;
-            font-size: 14px;
-            line-height: 20px;
-            text-transform: capitalize;
-
-            &-uppercase {
-                // text-transform: uppercase;
-                @include global.uppercase;
-            }
-
-            &-extra {
-                padding-top: 1rem;
-                text-transform: none;
-            }
-        }
-    }
-
-    &-two {
-        @include tablet {
-            // display: none;
-            @include global.display-none;
-
-        }
-
-    }
-
-    &-three {
+      &-extra {
         padding-top: 1rem;
+        text-transform: none;
+      }
+    }
+  }
 
-        @include tablet {
-            // display: none;
-            @include global.display-none;
-        }
+  &-two {
+    @include tablet {
+      // display: none;
+      @include global.display-none;
+    }
+  }
+
+  &-three {
+    padding-top: 1rem;
+
+    @include tablet {
+      @include global.display-none;
+    }
+  }
+
+  &-four {
+    padding-top: 1rem;
+
+    @include tablet {
+      @include global.display-none;
+    }
+  }
+
+  &-lower {
+    padding-left: 1rem;
+    padding-top: 1rem;
+
+    &__header {
+      font-size: 24px;
+      line-height: 32px;
+      font-family: global.$avenirnext-regular;
+      color: white;
     }
 
-    &-four {
-        padding-top: 1rem;
-
-        @include tablet {
-            // display: none;
-            @include global.display-none;
-        }
-
+    &__copyright {
+      font-size: 14px;
+      line-height: 22px;
+      font-family: global.$avenirnext-regular;
+      color: white;
     }
 
-    &-lower {
-        padding-left: 1rem;
-        padding-top: 1rem;
-
-        &__header {
-            font-size: 24px;
-            line-height: 32px;
-            font-family: global.$avenirnext-regular;
-            color: white;
-            // padding-left: 1rem;
-        }
-
-        &__copyright {
-            font-size: 14px;
-            line-height: 22px;
-            font-family: global.$avenirnext-regular;
-            color: white;
-            // padding-left: 1rem;
-        }
-
-        @include tablet {
-            // display: none;
-            @include global.display-none;
-        }
-
-        @include desktop {
-            &__header {
-                padding-right: 1vw;
-            }
-
-            &__copyright {
-                padding-left: 12vh;
-            }
-        }
+    @include tablet {
+      @include global.display-none;
     }
 
+    @include desktop {
+      &__header {
+        padding-right: 1vw;
+      }
+
+      &__copyright {
+        padding-left: 12vh;
+      }
+    }
+  }
 }
 
 .footer-mobile {
-    // display: none;
-    @include global.display-none;
+  @include global.display-none;
 
-    // background-color: blue;
-    @include tablet {
-        // display: flex;
-        // flex-direction: row;
-        @include global.flexBox-row;
-        align-items: baseline;
-        justify-content: space-between;
+  @include tablet {
+    @include global.flexBox-row;
+    align-items: baseline;
+    justify-content: space-between;
 
-        padding: 0.5rem 1rem;
+    padding: 0.5rem 1rem;
 
-        &__row {
-            // display: flex;
-            // flex-direction: row;
-            @include global.flexBox-row;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        &__header {
-            // display: flex;
-            // flex-direction: row;
-            @include global.flexBox-row;
-            color: white;
-            font-family: global.$avenirnext-bold;
-            font-size: 36px;
-            line-height: 44px;
-            // margin: 1rem 0 1rem 1rem;
-        }
-
-        &__social {
-
-            @include global.flexBox-row;
-        }
-
-        &__icon {
-            padding-left: 1rem;
-        }
-
-        &-left {
-            @include global.flexBox-row;
-            justify-content: space-between;
-        }
-
-        &-right {
-            @include global.flexBox-row;
-            // justify-content: baseline;
-            // justify-content: flex-end;
-            align-items: baseline;
-            // padding-right: 1rem;
-        }
-
+    &__row {
+      // display: flex;
+      // flex-direction: row;
+      @include global.flexBox-row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
     }
 
-    @include desktop {
-        padding: 1rem 7vw;
-
-        &__header {
-            color: white;
-        }
+    &__header {
+      @include global.flexBox-row;
+      color: white;
+      font-family: global.$avenirnext-bold;
+      font-size: 36px;
+      line-height: 44px;
     }
+
+    &__social {
+      @include global.flexBox-row;
+    }
+
+    &__icon {
+      padding-left: 1rem;
+    }
+
+    &-left {
+      @include global.flexBox-row;
+      justify-content: space-between;
+    }
+
+    &-right {
+      @include global.flexBox-row;
+      align-items: baseline;
+    }
+  }
+
+  @include desktop {
+    padding: 1rem 7vw;
+
+    &__header {
+      color: white;
+    }
+  }
 }
 
 .footer-tablet__team {
-    @include global.display-none;
+  @include global.display-none;
 
-    @include tablet {
-        @include global.flexBox-row;
-        justify-content: space-between;
-        padding: 0 1rem;
+  @include tablet {
+    @include global.flexBox-row;
+    justify-content: space-between;
+    padding: 0 1rem;
 
-        &__left {
-            @include global.flexBox-column;
-        }
-
-        &__center {
-            @include global.flexBox-column;
-        }
-
-        &__right {
-            @include global.flexBox-column;
-        }
+    &__left {
+      @include global.flexBox-column;
     }
 
-    @include desktop {
-        padding: 0 12vh;
+    &__center {
+      @include global.flexBox-column;
     }
 
+    &__right {
+      @include global.flexBox-column;
+    }
+  }
+
+  @include desktop {
+    padding: 0 12vh;
+  }
 }
 
 .footer-tablet__lower {
-    @include global.display-none;
+  @include global.display-none;
 
-    @include tablet {
-        display: flex;
-        padding: 1rem 0 0 1rem;
-    }
+  @include tablet {
+    display: flex;
+    padding: 1rem 0 0 1rem;
+  }
 }
