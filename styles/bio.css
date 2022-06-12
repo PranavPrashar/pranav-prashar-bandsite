@@ -52,7 +52,7 @@ body {
   .nav-bar__heading {
     font-family: "avenirnext-regular";
     padding: 1rem;
-    text-transform: uppercase;
+    text-transform: uppercase !important;
     align-content: center;
     align-items: baseline;
   }
@@ -94,7 +94,7 @@ body {
 .nav-bar__heading {
   font-family: "avenirnext-regular";
   margin: 0.5rem 0 0 0;
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 @media (min-width: 1280px) {
   .nav-bar__heading {
@@ -141,7 +141,6 @@ body {
   font-family: "avenirnext-demi";
   padding-bottom: 0.5rem;
 }
-
 .bees-knees {
   display: flex;
   flex-direction: column;
@@ -420,7 +419,7 @@ body {
   text-transform: capitalize;
 }
 .footer-address__header-uppercase {
-  text-transform: uppercase;
+  text-transform: uppercase !important;
 }
 .footer-address__header-extra {
   padding-top: 1rem;

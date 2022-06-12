@@ -24,7 +24,6 @@ body {
 }
 
 .uppercase {
-    // text-transform: uppercase !important;
     @include global.uppercase;
 }
 
@@ -55,7 +54,8 @@ body {
             font-family: global.$avenirnext-regular ;
             // margin: 0.5rem 0 0 0;
             padding: 1rem;
-            text-transform: uppercase;
+            // text-transform: uppercase;
+            @include global.uppercase;
             // justify-content: center;
             align-content: center;
             align-items: baseline;
@@ -74,7 +74,6 @@ body {
         &__list {
             justify-content: flex-start;
             align-items: flex-start;
-            // background-color: beige;
             margin-bottom: 0;
 
             &-container-selected {
@@ -109,7 +108,8 @@ body {
     &__heading {
         font-family: global.$avenirnext-regular ;
         margin: 0.5rem 0 0 0;
-        text-transform: uppercase;
+        // text-transform: uppercase;
+        @include global.uppercase;
 
         @include desktop {
             padding-left: 10rem;
@@ -118,21 +118,15 @@ body {
     }
 
     &__menu {
-        // display: flex;
-        // flex-direction: row;
         @include global.flexBox-row;
-        // background: blue;
         width: 100%;
         justify-content: space-between;
-
         @include desktop {
             font-size: 1rem;
         }
     }
 
     &__list {
-        // display: flex;
-        // flex-direction: row;
         @include global.flexBox-row;
         width: 100%;
         justify-content: space-evenly;
@@ -155,14 +149,6 @@ body {
         }
 
         &-container-selected {
-            // display: flex;
-            // flex-direction: column;
-            // flex-wrap: nowrap;
-            // justify-content: space-between;
-            // width: 50%;
-            // height: auto;
-            // background: blue;
-            // text-align: center;
             border-bottom: 0.25rem white solid;
         }
 
@@ -172,8 +158,15 @@ body {
             color: white;
             font-family: global.$avenirnext-demi;
             padding-bottom: 0.50rem;
+            
 
 
+        }
+
+        @include desktop{
+            &-container-selected{
+                // padding-bottom: 1vh;
+            }
         }
     }
 }
@@ -344,8 +337,6 @@ body {
 
         &__header-smaller {
             color: blue;
-            // display: flex;
-            // flex-direction: column;
             @include global.flexBox-column;
         }
     }
@@ -542,7 +533,8 @@ body {
             text-transform: capitalize;
 
             &-uppercase {
-                text-transform: uppercase;
+                // text-transform: uppercase;
+                @include global.uppercase;
             }
 
             &-extra {
