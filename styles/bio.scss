@@ -24,7 +24,8 @@ body {
 }
 
 .uppercase {
-    text-transform: uppercase !important;
+    // text-transform: uppercase !important;
+    @include global.uppercase;
 }
 
 
@@ -309,7 +310,7 @@ body {
             // color: red;
             font-size: 28px;
 
-            &_lower {
+            &--lower {
                 font-size: 1rem;
                 line-height: 20px;
                 font-family: global.$avenirnext-demi;

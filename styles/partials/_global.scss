@@ -46,5 +46,6 @@ $font-size-36: 36;
 }
 
 
-
-
+@mixin uppercase {
+    text-transform: uppercase !important;
+}
