@@ -32,9 +32,9 @@ body {
 .nav-bar {
   background-color: #323232;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   color: white;
 }
 @media (min-width: 768px) {
@@ -67,14 +67,25 @@ body {
   .nav-bar__list {
     justify-content: flex-start;
     align-items: flex-start;
+    margin-bottom: 0;
   }
   .nav-bar__list-container-selected {
-    border-bottom: none !important;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 0.25rem white solid;
   }
   .nav-bar__list-item {
     width: 100%;
     padding-right: 2rem;
     border: none;
+  }
+}
+@media (min-width: 1280px) {
+  .nav-bar {
+    align-items: center;
   }
 }
 .nav-bar-top {
@@ -85,11 +96,22 @@ body {
   margin: 0.5rem 0 0 0;
   text-transform: uppercase;
 }
+@media (min-width: 1280px) {
+  .nav-bar__heading {
+    padding-left: 10rem;
+    font-size: 36px;
+  }
+}
 .nav-bar__menu {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+}
+@media (min-width: 1280px) {
+  .nav-bar__menu {
+    font-size: 1rem;
+  }
 }
 .nav-bar__list {
   display: flex;
@@ -99,6 +121,7 @@ body {
   text-decoration: none;
   list-style: none;
   padding: 0;
+  margin-bottom: 0;
 }
 .nav-bar__list-container {
   display: flex;
@@ -109,12 +132,6 @@ body {
   text-align: center;
 }
 .nav-bar__list-container-selected {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  width: 50%;
-  text-align: center;
   border-bottom: 0.25rem white solid;
 }
 .nav-bar__list-item {
@@ -153,18 +170,26 @@ body {
     font-family: "avenirnext-bold";
   }
 }
+@media (min-width: 1280px) {
+  .bees-knees__header {
+    padding-left: 10rem;
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
 
 .about-musicians {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  padding-top: 1.5rem;
 }
 .about-musicians__header {
   font-family: "avenirnext-demi";
   color: #323232;
   margin: 0.25rem 0 0.25rem 1rem;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 36px;
+  line-height: 44px;
 }
 .about-musicians__header-smaller {
   line-height: 22px;
@@ -200,8 +225,6 @@ body {
 }
 @media (min-width: 768px) {
   .about-musicians__header {
-    display: flex;
-    flex-direction: row;
     align-items: flex-end;
     justify-content: flex-start;
     padding-top: 1rem;
@@ -219,10 +242,10 @@ body {
   }
   .about-musicians__qoute {
     margin: 0.25rem 6.5rem 0.25rem 6.5rem;
-    font-size: 24px;
+    font-size: 28px;
   }
   .about-musicians__qoute_lower {
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 20px;
     font-family: "avenirnext-demi";
   }
@@ -251,19 +274,47 @@ body {
     flex-direction: column;
   }
 }
+@media (min-width: 1280px) {
+  .about-musicians__header {
+    margin-left: 15rem;
+  }
+  .about-musicians__img-band-tablet {
+    width: 50%;
+  }
+  .about-musicians__qoute {
+    margin: 0.25rem 30vw 0.25rem 25vw;
+    text-align: left;
+  }
+  .about-musicians__header-tablet {
+    padding-left: 25vw;
+    font-size: 24px;
+  }
+  .about-musicians__paragraph {
+    font-family: "avenirnext-regular";
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .about-musicians .paragraph-left {
+    padding-left: 20vw;
+  }
+  .about-musicians .paragraph-right {
+    padding-right: 20vw;
+  }
+}
 
 .photo-gallery {
   display: flex;
   flex-direction: column;
   background-color: #fafafa;
   flex-wrap: none;
+  padding-top: 1rem;
 }
 .photo-gallery__mobile {
   width: auto;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
 }
 .photo-gallery__header {
   font-family: "avenirnext-demi";
@@ -286,9 +337,9 @@ body {
     display: none;
   }
   .photo-gallery__tablet {
-    display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    display: flex;
     flex-direction: row;
     margin: 1rem 1rem;
   }
@@ -297,6 +348,16 @@ body {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+  }
+}
+@media (min-width: 1280px) {
+  .photo-gallery__header {
+    font-size: 36px;
+    line-height: 44px;
+    padding-left: 10rem;
+  }
+  .photo-gallery__tablet {
+    margin: 1rem 10rem;
   }
 }
 

@@ -12,34 +12,12 @@
     }
 }
 
-@mixin desktop{
-    @media (min-width: 1080px){
+@mixin desktop {
+    @media (min-width: 1280px) {
         @content;
     }
 }
 
-
-
-
-// @font-face {
-//     font-family: avenirnext-bold;
-//     src: url(/assets/fonts/AvenirNextLTPro-Bold.otf);
-//     font-weight: bold;
-//     font-style: normal;
-// }
-
-// @font-face {
-//     font-family: avenirnext-regular;
-//     src: url(/assets/fonts/AvenirNextLTPro-Regular.otf);
-//     font-style: normal;
-//     font-weight: 400;
-// }
-
-// @font-face {
-//     font-family: avenirnext-demi;
-//     src: url(/assets/fonts/AvenirNextLTPro-Demi.otf);
-//     font-weight: 600;
-// }
 
 body {
     margin: 0;
@@ -49,19 +27,15 @@ body {
     text-transform: uppercase !important;
 }
 
-// @mixin mobile {
-//     @media (min-width:320px) and (max-width:767px) {
-//         background-color:red;
-//         @content
-//     }
-// }
+
 .nav-bar {
     background-color: global.$bandsite-black;
-    display: flex;
+    @include global.flexBox-column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     color: white;
+
+    
 
     @include tablet {
         justify-content: flex-start;
@@ -84,12 +58,12 @@ body {
             // justify-content: center;
             align-content: center;
             align-items: baseline;
+            
         }
 
         &__menu-tablet {
             // background-color: grey;
-            display: flex;
-            flex-direction: row;
+            @include global.flexBox-row;
             justify-content: space-evenly;
             align-items: baseline;
             width: 25% !important;
@@ -100,11 +74,16 @@ body {
             justify-content: flex-start;
             align-items: flex-start;
             // background-color: beige;
+            margin-bottom: 0;
 
             &-container-selected {
                 // width: 25%;
                 // background-color: red;
-                border-bottom: none !important;
+                @include global.flexBox-column;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                text-align: center;
+                border-bottom: 0.25rem white solid;
             }
 
             &-item {
@@ -114,6 +93,12 @@ body {
                 border: none;
             }
         }
+
+    }
+
+    @include desktop{
+        align-items: center;
+        
     }
 
     &-top {
@@ -124,28 +109,40 @@ body {
         font-family: global.$avenirnext-regular ;
         margin: 0.5rem 0 0 0;
         text-transform: uppercase;
+        @include desktop{
+            padding-left: 10rem;
+            font-size: 36px;
+        }
     }
 
     &__menu {
-        display: flex;
-        flex-direction: row;
+        // display: flex;
+        // flex-direction: row;
+        @include global.flexBox-row;
         // background: blue;
         width: 100%;
         justify-content: space-between;
+        @include desktop{
+            font-size: 1rem;
+        }
     }
 
     &__list {
-        display: flex;
-        flex-direction: row;
+        // display: flex;
+        // flex-direction: row;
+        @include global.flexBox-row;
         width: 100%;
         justify-content: space-evenly;
         text-decoration: none;
         list-style: none;
         padding: 0;
+        // Margin bottom to remove the white space bellow so white line is level with div
+        margin-bottom: 0;
 
         &-container {
-            display: flex;
-            flex-direction: column;
+            // display: flex;
+            // flex-direction: column;
+            @include global.flexBox-column;
             flex-wrap: nowrap;
             justify-content: space-between;
             width: 50%;
@@ -155,13 +152,14 @@ body {
         }
 
         &-container-selected {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            width: 50%;
+            // display: flex;
+            // flex-direction: column;
+            // flex-wrap: nowrap;
+            // justify-content: space-between;
+            // width: 50%;
+            // height: auto;
             // background: blue;
-            text-align: center;
+            // text-align: center;
             border-bottom: 0.25rem white solid;
         }
 
@@ -178,8 +176,9 @@ body {
 }
 
 .bees-knees {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    @include global.flexBox-column;
     align-items: flex-start;
     justify-content: center;
     background: url(/assets/images/hero-bio.jpg);
@@ -205,19 +204,30 @@ body {
             font-family: global.$avenirnext-bold;
         }
     }
+
+    @include desktop{
+        &__header{
+            padding-left: 10rem;
+            font-size: 60px;
+            line-height: 68px;
+
+        }
+    }
 }
 
 .about-musicians {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    @include global.flexBox-column;
     flex-wrap: nowrap;
+    padding-top: 1.5rem;
 
     &__header {
         font-family: global.$avenirnext-demi;
         color: global.$bandsite-black;
         margin: 0.25rem 0 0.25rem 1rem;
-        font-size: 24px;
-        line-height: 32px;
+        font-size: 36px;
+        line-height: 44px;
 
         &-smaller {
             line-height: 22px;
@@ -263,8 +273,9 @@ body {
     @include tablet {
 
         &__header {
-            display: flex;
-            flex-direction: row;
+            // display: flex;
+            // flex-direction: row;
+            // @include global.flexBox-row;
             align-items: flex-end;
             justify-content: flex-start;
             padding-top: 1rem;
@@ -294,10 +305,10 @@ body {
         &__qoute {
             margin: 0.25rem 6.5rem 0.25rem 6.5rem;
             // color: red;
-            font-size: 24px;
+            font-size: 28px;
 
             &_lower {
-                font-size: 14px;
+                font-size: 1rem;
                 line-height: 20px;
                 font-family: global.$avenirnext-demi;
             }
@@ -319,9 +330,9 @@ body {
             color: global.$bandsite-black;
             text-transform: capitalize;
             display: flex;
-            // color: blue;
-            display: flex;
-            flex-direction: row;
+            // display: flex;
+            // flex-direction: row;
+            @include global.flexBox-row;
             padding-left: 6.5rem;
             justify-content: flex-start;
             align-items: center;
@@ -330,26 +341,73 @@ body {
 
         &__header-smaller {
             color: blue;
-            display: flex;
-            flex-direction: column;
+            // display: flex;
+            // flex-direction: column;
+            @include global.flexBox-column;
         }
     }
+
+    @include desktop{
+        &__header {
+            margin-left:15rem; 
+        }
+        &__img-band-tablet {
+            width: 50%;
+        }
+
+        &__qoute{
+            margin: 0.25rem 30vw 0.25rem 25vw;
+            text-align: left;
+            //trbl
+        }
+
+        &__header-tablet {
+            padding-left: 25vw;
+            font-size: 24px;
+
+        }
+
+        &__paragraph {
+            font-family: global.$avenirnext-regular;
+            font-size: 18px;
+            line-height: 32px;
+            // margin: 0 1rem 1rem 1rem;
+            //trbl
+    
+        }
+
+        .paragraph-left{
+            padding-left: 20vw;
+        }
+
+        .paragraph-right{
+            padding-right: 20vw;
+        }
+
+
+
+    }
+
+
 
 }
 
 .photo-gallery {
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    @include global.flexBox-column;
     background-color: global.$alabaster;
     flex-wrap: none;
+    padding-top: 1rem;
     // margin: 0 1rem 0.25rem 1rem;
 
     &__mobile {
         width: auto;
-        flex-direction: column;
+        // flex-direction: column;
         justify-content: center;
         align-items: center;
-        display: flex;
+        // display: flex;
+        @include global.flexBox-column;
     }
 
     &__header {
@@ -384,10 +442,11 @@ body {
         // }
         &__tablet {
             // background-color: red;
-            display: flex;
+            // display: flex;
             justify-content: flex-start;
             align-items: flex-start;
-            flex-direction: row;
+            // flex-direction: row;
+            @include global.flexBox-row;
             margin: 1rem 1rem;
 
             &-container {
@@ -400,12 +459,26 @@ body {
             }
         }
     }
+
+    @include desktop{
+
+        &__header{
+            font-size: 36px;
+            line-height: 44px;
+            padding-left: 10rem;
+
+        }
+        &__tablet{
+            margin: 1rem 10rem;
+        }
+    }
 }
 
 .footer {
     background-color: global.$bandsite-black;
-    display: flex;
-    flex-direction: column;
+    // display: flex;
+    // flex-direction: column;
+    @include global.flexBox-column;
 
     &-testing {
         justify-content: flex-end;
@@ -419,7 +492,7 @@ body {
         line-height: 44px;
         margin: 1rem 0 1rem 1rem;
 
-        @include tablet{
+        @include tablet {
             display: none;
         }
     }
@@ -431,7 +504,7 @@ body {
         padding: 0;
         margin-left: 1rem;
 
-        @include tablet{
+        @include tablet {
             display: none;
         }
 
@@ -474,23 +547,30 @@ body {
         }
     }
 
-    &-two{
-        @include tablet{
-            display: none;
+    &-two {
+        @include tablet {
+            // display: none;
+            @include global.display-none;
+
         }
 
     }
+
     &-three {
         padding-top: 1rem;
-        @include tablet{
-            display: none;
+
+        @include tablet {
+            // display: none;
+            @include global.display-none;
         }
     }
 
     &-four {
         padding-top: 1rem;
-        @include tablet{
-            display: none;
+
+        @include tablet {
+            // display: none;
+            @include global.display-none;
         }
 
     }
@@ -514,102 +594,105 @@ body {
             color: white;
             // padding-left: 1rem;
         }
-        @include tablet{
-            display: none;
+
+        @include tablet {
+            // display: none;
+            @include global.display-none;
         }
     }
 
-    
-    
-    
+
+
+
 }
 
-.footer-mobile{
-    display: none;
+.footer-mobile {
+    // display: none;
+    @include global.display-none;
+
     // background-color: blue;
-    @include tablet{
-        display: flex;
-        flex-direction: row;
+    @include tablet {
+        // display: flex;
+        // flex-direction: row;
+        @include global.flexBox-row;
         align-items: baseline;
         justify-content: space-between;
-    
+
         padding: 0.5rem 1rem;
 
-        &__row{
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-    }
-    &__header{
-        display: flex;
-        flex-direction: row;
-        color: white;
-        font-family: global.$avenirnext-bold;
-        font-size: 36px;
-        line-height: 44px;
-        // margin: 1rem 0 1rem 1rem;
-    }
-    &__social{
-        display: flex;
-        flex-direction: row;
-    }
+        &__row {
+            // display: flex;
+            // flex-direction: row;
+            @include global.flexBox-row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
 
-    &__icon{
-        padding-left: 1rem;
-    }
+        &__header {
+            // display: flex;
+            // flex-direction: row;
+            @include global.flexBox-row;
+            color: white;
+            font-family: global.$avenirnext-bold;
+            font-size: 36px;
+            line-height: 44px;
+            // margin: 1rem 0 1rem 1rem;
+        }
 
-    &-left{
-        display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    }
+        &__social {
 
-    &-right{
-        display: flex;
-        flex-direction: row;
-        // justify-content: baseline;
-        // justify-content: flex-end;
-        align-items: baseline;
-        // padding-right: 1rem;
-    }
+            @include global.flexBox-row;
+        }
+
+        &__icon {
+            padding-left: 1rem;
+        }
+
+        &-left {
+            @include global.flexBox-row;
+            justify-content: space-between;
+        }
+
+        &-right {
+            @include global.flexBox-row;
+            // justify-content: baseline;
+            // justify-content: flex-end;
+            align-items: baseline;
+            // padding-right: 1rem;
+        }
 
     }
 }
 
 .footer-tablet__team {
-    display: none;
+    @include global.display-none;
 
-    @include tablet{
-        display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 0 1rem;
-    &__left{
-        display: flex;
-        flex-direction: column;
+    @include tablet {
+        @include global.flexBox-row;
+        justify-content: space-between;
+        padding: 0 1rem;
+
+        &__left {
+            @include global.flexBox-column;
+        }
+
+        &__center {
+            @include global.flexBox-column;
+        }
+
+        &__right {
+            @include global.flexBox-column;
+        }
     }
-    &__center{
-        display: flex;
-        flex-direction: column;
-    }
-    &__right{
-        display: flex;
-        flex-direction: column;
-    }
-    }
-    
+
 }
 
-.footer-tablet__lower{
-    display: none;
-    @include tablet{
+.footer-tablet__lower {
+    @include global.display-none;
+
+    @include tablet {
         display: flex;
-        padding: 1rem 0 0 1rem  ;
+        padding: 1rem 0 0 1rem;
     }
 }
-
-
-
-

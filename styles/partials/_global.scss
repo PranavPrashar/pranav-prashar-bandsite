@@ -26,3 +26,25 @@ $avenirnext-bold:'avenirnext-bold';
 $silver:#afafaf;
 $mercury:#e1e1e1;
 $alabaster:#fafafa;
+
+$fontsize-24: 24;
+$font-size-36: 36;
+
+@mixin flexBox-row {
+    display: flex;
+    flex-direction: row;
+}
+
+
+@mixin flexBox-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin display-none{
+    display: none;
+}
+
+
+
+
