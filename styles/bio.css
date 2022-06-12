@@ -43,7 +43,7 @@ body {
     align-items: baseline;
     flex-direction: row;
   }
-  .nav-bar-top {
+  .nav-bar__top {
     align-items: baseline;
     align-content: center;
     justify-content: center;
