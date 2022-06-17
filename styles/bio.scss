@@ -663,13 +663,15 @@ body {
     line-height: 32px;
   }
 
-  &__form{
+  &__form {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding-right: 1rem;
     justify-content: baseline;
     // border-bottom: 1.5px global.$silver solid;
+
+
   }
 
   &__img {
@@ -690,7 +692,11 @@ body {
     flex-direction: row;
     padding-right: 1rem;
     padding-top: 0.5rem;
-    border-bottom: 1.5px global.$silver solid;
+    // border-bottom: 1.5px global.$silver solid;
+    @include tablet{
+      padding-left: 3rem;
+      // background-color: green;
+    }
   }
 
   &__top {
@@ -720,13 +726,19 @@ body {
     padding-right: 1rem;
     justify-content: baseline;
     border-bottom: 1.5px global.$silver solid;
-    &--form{
+    @include tablet{
+      // padding-left: 3rem;
+      // background-color: yellow;
+    }
+
+    
+    &--form {
       display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-right: 1rem;
-    justify-content: baseline;
-    // border-bottom: 1.5px global.$silver solid;
+      flex-direction: column;
+      width: 100%;
+      padding-right: 1rem;
+      justify-content: baseline;
+      // border-bottom: 1.5px global.$silver solid;
     }
 
     &--header {
@@ -804,11 +816,15 @@ body {
     flex-direction: column;
     // border-bottom: 1.5px global.$silver solid;
     // padding-bottom: 1rem;
+    @include tablet {
+      // background-color: blue;
+      padding-left: 3rem;
+    }
 
-    &--container{
+    &--container {
       padding: 1rem 1rem;
-    display: flex;
-    flex-direction: row;
+      display: flex;
+      flex-direction: row;
     }
 
     &--img {
@@ -862,11 +878,14 @@ body {
   align-items: flex-start;
   justify-content: center;
   background: url(../assets/images/hero-shows.jpg);
+  // margin: 0 1rem 0 0;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 80%;
-  height: auto;
+  // opacity: 20%;
+  // height: auto;
+
 
   &--small {
     color: white;
@@ -877,13 +896,13 @@ body {
 
   &--larger {
     padding-left: 1rem;
-    padding-right: 3rem;
+    padding-right: 5rem;
     color: white;
     font-family: global.$avenirnext-bold;
     text-transform: capitalize;
     font-size: 36px;
     line-height: 44px;
-    margin: 0;
+    margin: 0 1rem 0 0;
   }
 }
 
@@ -904,6 +923,7 @@ body {
     font-family: global.$avenirnext-demi;
     color: global.$bandsite-black;
     // margin: 0.25rem 0 0.25rem 1rem;
+    padding-left: 1rem;
     font-size: 36px;
     line-height: 44px;
     margin-bottom: 0;
@@ -929,13 +949,13 @@ body {
 
     &--venue {
       text-transform: capitalize;
-      font-family: global.$avenirnext-demi;
+      font-family: global.$avenirnext-regular;
       margin: 0;
     }
 
     &--location {
       text-transform: capitalize;
-      font-family: global.$avenirnext-demi;
+      font-family: global.$avenirnext-regular;
       margin: 0;
     }
 

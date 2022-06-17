@@ -616,7 +616,11 @@ body {
   flex-direction: row;
   padding-right: 1rem;
   padding-top: 0.5rem;
-  border-bottom: 1.5px #afafaf solid;
+}
+@media (min-width: 768px) {
+  .conversation__left {
+    padding-left: 3rem;
+  }
 }
 .conversation__top {
   padding: 1rem 0 0 1rem;
@@ -733,6 +737,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 768px) {
+  .conversation__users {
+    padding-left: 3rem;
+  }
+}
 .conversation__users--container {
   padding: 1rem 1rem;
   display: flex;
@@ -783,8 +792,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 80%;
-  height: auto;
 }
 .album__header--small {
   color: white;
@@ -794,13 +801,13 @@ body {
 }
 .album__header--larger {
   padding-left: 1rem;
-  padding-right: 3rem;
+  padding-right: 5rem;
   color: white;
   font-family: "avenirnext-bold";
   text-transform: capitalize;
   font-size: 36px;
   line-height: 44px;
-  margin: 0;
+  margin: 0 1rem 0 0;
 }
 
 .soundcloud-iframe {
@@ -817,6 +824,7 @@ body {
 .shows__header {
   font-family: "avenirnext-demi";
   color: #323232;
+  padding-left: 1rem;
   font-size: 36px;
   line-height: 44px;
   margin-bottom: 0;
@@ -839,12 +847,12 @@ body {
 }
 .shows__details--venue {
   text-transform: capitalize;
-  font-family: "avenirnext-demi";
+  font-family: "avenirnext-regular";
   margin: 0;
 }
 .shows__details--location {
   text-transform: capitalize;
-  font-family: "avenirnext-demi";
+  font-family: "avenirnext-regular";
   margin: 0;
 }
 .shows__details--buybutton {

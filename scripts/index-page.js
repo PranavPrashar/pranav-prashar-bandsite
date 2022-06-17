@@ -47,9 +47,11 @@ function conversationFormInput(firstName, comment) {
 
   createContainerTwo(firstName, newdate, comment);
 
-  //   people.unshift(newObject); // Add to front of json object
-  //   people.unShiftpush(newObject);
-  people.unshift({ firstName, newdate, comment });
+  // people.unshift({ firstName, newdate, comment });
+  const obj = { name: firstName, date: newdate, conversation: comment };
+  // createContainer(obj);
+  people.unshift(obj);
+
   console.log(people);
 }
 
@@ -103,6 +105,7 @@ function createContainerTwo(firstName, date, converstation) {
   console.log(conversationUsersContainer);
   //   console.log("Person:" + person);
 }
+
 function createContainer(person) {
   //outer container
   const conversationUsersContainer = document.createElement("div");
