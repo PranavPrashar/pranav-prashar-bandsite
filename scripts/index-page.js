@@ -22,6 +22,7 @@ const people = [
   },
 ];
 const formElement = document.querySelector("#joinConversationForm");
+const conversationUsers = document.querySelector(".conversation__users");
 
 formElement.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -29,7 +30,8 @@ formElement.addEventListener("submit", function (event) {
   const formName = event.target.nameInput.value;
   const formComment = event.target.conversation__commentinput.value;
 
-  console.log(formName, formComment);
+  conversationFormInput(formName, formComment);
+  //   createContainer(people);
 });
 
 function conversationFormInput(firstName, comment) {
@@ -41,13 +43,66 @@ function conversationFormInput(firstName, comment) {
   let newdate = month + "/" + day + "/" + year;
   console.log(newdate);
 
-  let newObject = { name: firstName, conversation: comment };
-  console.log(firstName);
-  console.log(newObject);
-  people.unshift(newObject);
+  //   let newObject = { firstName, newdate, comment };
+
+  createContainerTwo(firstName, newdate, comment);
+
+  //   people.unshift(newObject); // Add to front of json object
+  //   people.unShiftpush(newObject);
+  people.unshift({ firstName, newdate, comment });
+  console.log(people);
 }
 
-const conversationUsers = document.querySelector(".conversation__users");
+// for (let i = 0; i < people.length; i++) {
+//   createContainer(people[i]);
+// }
+
+function createContainerTwo(firstName, date, converstation) {
+  //outer container
+  const conversationUsersContainer = document.createElement("div");
+  conversationUsersContainer.classList.add("conversation__users--container");
+
+  //image container
+  const conversationImgContainer = document.createElement("div");
+  conversationImgContainer.classList.add("conversation__users--img");
+
+  //Details container
+  const usersDetails = document.createElement("div");
+  usersDetails.classList.add("conversation__users--details");
+
+  //image
+  const conversationImg = document.createElement("div");
+  conversationImg.classList.add("conversation__img");
+  conversationImg.setAttribute("src", people.image);
+  conversationImgContainer.appendChild(conversationImg);
+
+  conversationUsersContainer.appendChild(conversationImgContainer); // Append the image container with the image
+
+  conversationUsersContainer.appendChild(usersDetails);
+
+  const detailsWrapper = document.createElement("div");
+  detailsWrapper.classList.add("details__wrapper");
+  usersDetails.appendChild(detailsWrapper);
+
+  const detailsWrapper__name = document.createElement("div");
+  detailsWrapper__name.innerHTML = firstName;
+  detailsWrapper__name.classList.add("details__wrapper--name");
+  detailsWrapper.appendChild(detailsWrapper__name);
+
+  const detailsWrapper__date = document.createElement("div");
+  detailsWrapper__date.innerHTML = date;
+  detailsWrapper__date.classList.add("details__wrapper--date");
+  detailsWrapper.appendChild(detailsWrapper__date);
+
+  const detailsParagraph = document.createElement("div");
+  detailsParagraph.innerHTML = converstation;
+  detailsParagraph.classList.add("details-paragraph");
+  usersDetails.appendChild(detailsParagraph);
+
+  conversationUsers.appendChild(conversationUsersContainer);
+  console.log(conversationUsersContainer);
+  //   console.log("Person:" + person);
+}
 function createContainer(person) {
   //outer container
   const conversationUsersContainer = document.createElement("div");
@@ -91,7 +146,8 @@ function createContainer(person) {
   usersDetails.appendChild(detailsParagraph);
 
   conversationUsers.appendChild(conversationUsersContainer);
-  //   console.log(conversationUsersContainer);
+  console.log(conversationUsersContainer);
+  console.log("Person:" + person);
 }
 
 for (let i = 0; i < people.length; i++) {
