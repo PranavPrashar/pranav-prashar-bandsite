@@ -31,7 +31,6 @@ formElement.addEventListener("submit", function (event) {
   const formComment = event.target.conversation__commentinput.value;
 
   conversationFormInput(formName, formComment);
-  //   createContainer(people);
   formElement.reset();
 });
 

@@ -522,6 +522,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: baseline;
+    padding-right: 1rem;
   }
 }
 @media (min-width: 1280px) {
@@ -601,8 +602,8 @@ body {
 }
 .conversation__img {
   border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
+  width: 2.25rem;
+  height: 2.25rem;
   display: flex;
   flex-direction: row;
   background: url(../assets/images/Mohan-muruge.jpg);
@@ -610,6 +611,12 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media (min-width: 768px) {
+  .conversation__img {
+    width: 3rem;
+    height: 3rem;
+  }
 }
 .conversation__left {
   display: flex;
@@ -793,17 +800,33 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (min-width: 768px) {
+  .album__header--soundcloud {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 70%;
+  }
+}
+@media (min-width: 1280px) {
+  .album__header--soundcloud {
+    width: 100%;
+  }
+}
 .album__header--small {
   color: white;
   font-family: "avenirnext-demi";
   text-transform: capitalize;
   padding-left: 1rem;
+  font-size: 24px;
+  line-height: 32px;
 }
 .album__header--larger {
   padding-left: 1rem;
   padding-right: 5rem;
   color: white;
-  font-family: "avenirnext-bold";
+  font-family: "avenirnext-demi";
   text-transform: capitalize;
   font-size: 36px;
   line-height: 44px;
@@ -813,13 +836,22 @@ body {
 .soundcloud-iframe {
   padding: 1rem 1rem 2rem 1rem;
 }
-
+@media (min-width: 768px) {
+  .soundcloud-iframe {
+    width: 70%;
+    padding: 1rem 2rem;
+  }
+}
 .shows {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   padding-top: 1.5rem;
   padding: 1.5rem 1rem 0 1rem;
+}
+.shows--tablet-header {
+  display: flex;
+  flex-direction: row;
 }
 .shows__header {
   font-family: "avenirnext-demi";
@@ -835,10 +867,25 @@ body {
   margin: 0;
   border-bottom: 1.5px #afafaf solid;
 }
+@media (min-width: 768px) {
+  .shows__details {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    align-items: baseline;
+    justify-content: space-between;
+    align-content: center;
+  }
+}
 .shows__details--header {
   font-family: "avenirnext-regular";
   color: #afafaf;
   text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .shows__details--header {
+    display: none;
+  }
 }
 .shows__details--date {
   text-transform: capitalize;
@@ -867,4 +914,28 @@ body {
   text-align: center;
   text-transform: uppercase;
   margin: 1rem 0;
+}
+@media (min-width: 768px) {
+  .shows__details--buybutton {
+    padding: 0.75rem 2rem;
+    margin: 1rem;
+    border: 1px #323232 solid;
+    width: auto;
+  }
+}
+.shows__details--tablet {
+  display: none;
+}
+@media (min-width: 768px) {
+  .shows__details--tablet {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+.shows__details--tablet-header {
+  font-family: "avenirnext-regular";
+  color: #afafaf;
+  text-transform: uppercase;
 }/*# sourceMappingURL=bio.css.map */
