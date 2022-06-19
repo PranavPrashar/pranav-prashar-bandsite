@@ -586,6 +586,12 @@ body {
   background-color: white;
   justify-content: center;
 }
+@media (min-width: 1280px) {
+  .conversation {
+    display: flex;
+    align-items: center;
+  }
+}
 .conversation__header {
   font-family: "avenirnext-demi";
   color: #323232;
@@ -593,12 +599,27 @@ body {
   font-size: 24px;
   line-height: 32px;
 }
+@media (min-width: 1280px) {
+  .conversation__header {
+    padding-left: 10rem;
+    display: flex;
+    align-items: flex-start;
+    font-size: 32px;
+    width: 100%;
+  }
+}
 .conversation__form {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding-right: 1rem;
   justify-content: baseline;
+}
+@media (min-width: 1280px) {
+  .conversation__form {
+    width: 50%;
+    justify-content: center;
+  }
 }
 .conversation__img {
   border-radius: 50%;
@@ -747,6 +768,11 @@ body {
 @media (min-width: 768px) {
   .conversation__users {
     padding-left: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .conversation__users {
+    width: 50%;
   }
 }
 .conversation__users--container {
