@@ -816,15 +816,42 @@ body {
   flex-direction: row;
 }
 
-.album__header {
+.album__header, .album__header--soundcloud--container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  padding: 4rem;
+  margin: 0;
   background: url(../assets/images/hero-shows.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+@media (min-width: 1280px) {
+  .album__header, .album__header--soundcloud--container {
+    display: flex;
+    margin: 0;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+.album__header--paragraph {
+  display: flex;
+  flex-direction: column;
+}
+.album__header--soundcloud--container {
+  background: none;
+  padding: 0;
+  width: 50%;
+}
+@media (min-width: 1280px) {
+  .album__header--soundcloud--container {
+    width: 40%;
+  }
+}
+.album__header--soundcloud {
+  width: 20%;
 }
 @media (min-width: 768px) {
   .album__header--soundcloud {
@@ -838,6 +865,7 @@ body {
 @media (min-width: 1280px) {
   .album__header--soundcloud {
     width: 100%;
+    padding: 0;
   }
 }
 .album__header--small {
@@ -847,6 +875,11 @@ body {
   padding-left: 1rem;
   font-size: 24px;
   line-height: 32px;
+}
+@media (min-width: 1280px) {
+  .album__header--small {
+    display: flex;
+  }
 }
 .album__header--larger {
   padding-left: 1rem;
@@ -858,9 +891,20 @@ body {
   line-height: 44px;
   margin: 0 1rem 0 0;
 }
+@media (min-width: 1280px) {
+  .album__header--larger {
+    display: flex;
+  }
+}
 
 .soundcloud-iframe {
   padding: 1rem 1rem 2rem 1rem;
+}
+@media (min-width: 1280px) {
+  .soundcloud-iframe {
+    display: flex;
+    padding: 0;
+  }
 }
 @media (min-width: 768px) {
   .soundcloud-iframe {

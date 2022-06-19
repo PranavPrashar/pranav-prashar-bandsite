@@ -899,25 +899,48 @@ body {
 
 .album__header {
   @include global.flexBox-column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
+  padding: 4rem;
+  margin: 0;
   background: url(../assets/images/hero-shows.jpg);
-  // margin: 0 1rem 0 0;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+
+  @include desktop{
+    // background: lightblue;
+    display: flex;
+    margin: 0;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  &--paragraph{
+    display: flex;
+    flex-direction: column;
+  }
+  
   // opacity: 20%;
   // height: auto;
 
+  &--soundcloud--container{
+    @extend .album__header;
+    background: none;
+    padding: 0;
+    width: 50%;
+    @include desktop{
+      width: 40%;
+    }
+  }
   &--soundcloud{
     // @include global.flexBox-column;
     // align-items: flex-start;
     // justify-content: center;
-    // width: 100%;
+    width: 20%;
+    
     @include tablet {
-
-
       @include global.flexBox-column;
       align-items: flex-start;
       justify-content: center;
@@ -927,6 +950,7 @@ body {
 
       @include desktop{
         width: 100%;
+        padding: 0;
       }
   }
 
@@ -937,6 +961,9 @@ body {
     padding-left: 1rem;
     font-size: 24px;
     line-height: 32px;
+    @include desktop{
+      display: flex;
+    }
   }
 
   &--larger {
@@ -948,11 +975,18 @@ body {
     font-size: 36px;
     line-height: 44px;
     margin: 0 1rem 0 0;
+    @include desktop{
+      display: flex;
+    }
   }
 }
 
 .soundcloud-iframe {
   padding: 1rem 1rem 2rem 1rem;
+  @include desktop{
+    display: flex;
+    padding: 0;
+  }
 
   // @include tablet{
   //   background: blue;
