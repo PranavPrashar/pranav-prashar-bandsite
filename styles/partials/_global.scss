@@ -32,6 +32,8 @@ $alabaster:#fafafa;
 $fontsize-24: 24;
 $font-size-36: 36;
 
+$error-color: #D22D2D;
+
 @mixin flexBox-row {
     display: flex;
     flex-direction: row;
