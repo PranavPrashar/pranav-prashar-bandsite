@@ -1099,21 +1099,4 @@ body {
 .conversation .details-wrapper {
   display: flex;
   flex-direction: row;
-}
-
-.soundcloud-iframe {
-  padding: 1rem 1rem 2rem 1rem;
-  width: 100%;
-}
-@media (min-width: 1280px) {
-  .soundcloud-iframe {
-    display: flex;
-    padding: 0;
-  }
-}
-@media (min-width: 768px) {
-  .soundcloud-iframe {
-    width: 70%;
-    padding: 1rem 2rem;
-  }
 }/*# sourceMappingURL=bio.css.map */
