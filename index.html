@@ -6,22 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Band Site</title>
     <link rel="stylesheet" href="./styles/bio.css" />
+    <link rel="stylesheet" href="./styles/partials/_global.scss" />
+    <!-- <script src="./scripts/index-page.js" defer></script> -->
   </head>
 
   <body>
     <nav class="nav-bar">
       <div class="nav-bar__top">
-        <h1 class="nav-bar__heading">Bandsite</h1>
+        <!-- <h1 class="nav-bar__heading">Bandsite</h1> -->
+        <img
+          src="../assets/logos/Logo-bandsite.svg"
+          alt=""
+          class="nav-bar__heading--img"
+        />
       </div>
       <div class="nav-bar__menu nav-bar__menu-tablet">
         <ul class="nav-bar__list">
           <div class="nav-bar__list-container nav-bar__list-container-selected">
-            <a href="#" class="nav-bar__list-item">
+            <a href="./index.html" class="nav-bar__list-item">
               <li>Biography</li>
             </a>
           </div>
           <div class="nav-bar__list-container">
-            <a href="#" class="nav-bar__list-item">
+            <a href="./pages/shows.html" class="nav-bar__list-item">
               <li>Shows</li>
             </a>
           </div>
@@ -218,6 +225,46 @@
       </div>
     </div>
 
+    <div class="conversation">
+      <h1 class="conversation__header">Join the conversation</h1>
+      <div class="conversation__form">
+        <div class="conversation__left">
+          <div class="conversation__img"></div>
+        </div>
+        <div class="conversation__right">
+          <form id="joinConversationForm" class="conversation__right--form">
+            <label for="nameInput" class="input-label">Name</label>
+            <input
+              type="text"
+              id="nameInput"
+              class="conversation__nameinput"
+              placeholder="Enter your name"
+            />
+
+            <label for="commentInput" class="input-label">Comment</label>
+            <!-- <input type="text" id = "conversation__commentinput" class="conversation__commentinput" placeholder="Add a new comment"> -->
+            <textarea
+              id="conversation__commentinput"
+              class="conversation__commentinput"
+              name="commentInput"
+              rows="5"
+              cols="33"
+              placeholder="Add a new comment"
+            ></textarea>
+
+            <button type="submit" class="conversation__right--commentbutton">
+              Comment
+            </button>
+          </form>
+        </div>
+      </div>
+      <!-- Dynamic convestation container -->
+      <div class="conversation__users"></div>
+      <!-- <div>
+
+        </div> -->
+    </div>
+
     <footer class="footer">
       <!-- Footer tablet -->
       <div class="footer-mobile">
@@ -241,7 +288,12 @@
             />
           </div>
           <div class="footer-mobile-right">
-            <h1 class="footer-lower__header uppercase">Bandsite</h1>
+            <!-- <h1 class="footer-lower__header uppercase">Bandsite</h1> -->
+            <img
+              src="../assets/logos/Logo-bandsite.svg"
+              alt=""
+              class="nav-bar__heading--img"
+            />
           </div>
         </span>
       </div>
@@ -374,7 +426,12 @@
       </div>
 
       <div class="footer-lower">
-        <h1 class="footer-lower__header uppercase">Bandsite</h1>
+        <!-- <h1 class="footer-lower__header uppercase">Bandsite</h1> -->
+        <img
+          src="../assets/logos/Logo-bandsite.svg"
+          alt=""
+          class="nav-bar__heading--img"
+        />
         <h4 class="footer-lower__copyright">
           Copyright The Bees Knees © 2021 All Rights Reserved
         </h4>
@@ -382,5 +439,7 @@
 
       <!-- Footer Mobile -->
     </footer>
+    <!-- Script for the dynamic conversations -->
+    <script src="./scripts/index-page.js"></script>
   </body>
 </html>
