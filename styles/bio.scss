@@ -244,6 +244,8 @@ body {
   align-items: flex-start;
   justify-content: center;
   background: url(/assets/images/hero-bio.jpg);
+  background-blend-mode:multiply;
+  background-color: global.$bandsite-black-rgba;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1016,6 +1018,8 @@ body {
   // height: 100vh;
   margin: 0;
   background: url(../assets/images/hero-shows.jpg);
+  background-blend-mode:multiply;
+  background-color: global.$bandsite-black-rgba;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
