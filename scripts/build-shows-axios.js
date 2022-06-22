@@ -76,3 +76,5 @@ function getShows() {
       console.log("arr" + showsArr);
     });
 }
+
+getShows();

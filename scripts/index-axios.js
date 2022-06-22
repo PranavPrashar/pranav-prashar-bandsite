@@ -152,4 +152,13 @@ function convertTime(time) {
   return result;
 }
 
+function deleteComment(commentID) {
+  axios
+    .delete(
+      `https://project-1-api.herokuapp.com/comments/${commentID}?api_key=cbc3f43b-2fc6-41bf-b351-fefdf1e7b32f`
+    )
+    .catch((error) => {
+      console.log("Error: " + error);
+    });
+}
 getComments();
