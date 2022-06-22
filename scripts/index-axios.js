@@ -151,3 +151,5 @@ function convertTime(time) {
   const result = year + "/" + month + "/" + day;
   return result;
 }
+
+getComments();
