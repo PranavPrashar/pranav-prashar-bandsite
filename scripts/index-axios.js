@@ -1,30 +1,7 @@
-const people = [
-  {
-    name: "Connor Walton",
-    date: "02/17/2021",
-    conversation:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    image: "assets/images/Mohan-muruge.jpg",
-  },
-  {
-    name: "Emilie Beach",
-    date: "01/09/2021",
-    conversation:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    image: "assets/images/Mohan-muruge.jpg",
-  },
-  {
-    name: "Miles Acosta",
-    date: "12/20/2020",
-    conversation:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    image: "assets/images/Mohan-muruge.jpg",
-  },
-];
-
 const formElement = document.querySelector("#joinConversationForm");
 const conversationUsers = document.querySelector(".conversation__users");
-const apiKey = "bf85dba0-82a1-42f6-95a5-fb3d2219c849";
+const apiKey = "cbc3f43b-2fc6-41bf-b351-fefdf1e7b32f";
+
 let showsArr = [];
 
 formElement.addEventListener("submit", function (event) {
@@ -33,7 +10,9 @@ formElement.addEventListener("submit", function (event) {
   const formName = event.target.nameInput.value;
   const formComment = event.target.conversation__commentinput.value;
 
-  conversationFormInput(formName, formComment);
+  //   conversationFormInput(formName, formComment);
+  postComments(formName, formComment);
+  getComments();
   formElement.reset();
 });
 
@@ -50,15 +29,14 @@ function conversationFormInput(firstName, comment) {
 
   removeAllChildNodes(conversationUsers);
 
-  people.unshift(obj);
+  //   people.unshift(obj);
 
-  for (let i = 0; i < people.length; i++) {
-    createContainer(people[i]);
-  }
+  //   for (let i = 0; i < people.length; i++) {
+  //     createContainer(people[i]);
+  //   }
 }
 
-function createContainer(person) {
-  //outer container
+function createContainer(name, comment, time) {
   const conversationUsersContainer = document.createElement("div");
   conversationUsersContainer.classList.add("conversation__users--container");
 
@@ -73,7 +51,7 @@ function createContainer(person) {
   //image
   const conversationImg = document.createElement("div");
   conversationImg.classList.add("conversation__img");
-  conversationImg.setAttribute("src", people.image);
+  //   conversationImg.setAttribute("src", people.image);
   conversationImgContainer.appendChild(conversationImg);
 
   conversationUsersContainer.appendChild(conversationImgContainer); // Append the image container with the image
@@ -85,23 +63,22 @@ function createContainer(person) {
   usersDetails.appendChild(detailsWrapper);
 
   const detailsWrapper__name = document.createElement("div");
-  detailsWrapper__name.innerHTML = person.name;
+  detailsWrapper__name.innerHTML = name;
   detailsWrapper__name.classList.add("details__wrapper--name");
   detailsWrapper.appendChild(detailsWrapper__name);
 
   const detailsWrapper__date = document.createElement("div");
-  detailsWrapper__date.innerHTML = person.date;
+  detailsWrapper__date.innerHTML = time;
   detailsWrapper__date.classList.add("details__wrapper--date");
   detailsWrapper.appendChild(detailsWrapper__date);
 
   const detailsParagraph = document.createElement("div");
-  detailsParagraph.innerHTML = person.conversation;
+  detailsParagraph.innerHTML = comment;
   detailsParagraph.classList.add("details-paragraph");
   usersDetails.appendChild(detailsParagraph);
 
   conversationUsers.appendChild(conversationUsersContainer);
   console.log(conversationUsersContainer);
-  console.log("Person:" + person);
 }
 
 function removeAllChildNodes(parent) {
@@ -113,32 +90,64 @@ function removeAllChildNodes(parent) {
 function getComments() {
   axios
     .get(`https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`)
+    .catch((error) => {
+      console.log("error" + error);
+    })
     .then((response) => {
       console.log(response);
-      showsArr = response.data;
-      for (let i = 0; i < people.length; i++) {
-        createContainer(showsArr[i]);
-      }
-      console.log(showsArr);
-    })
-    .catch((error) => {
-      console.log(error);
+      console.log(response.data);
+      const myresponse = response.data;
+
+      myresponse.sort(function compare(a, b) {
+        var dateA = new Date(a.timestamp);
+        var dateB = new Date(b.timestamp);
+        return dateB - dateA;
+      });
+      showsArr = myresponse;
+      showsArr.forEach((person) => {
+        console.log(
+          "CL1" + person.name + " " + person.comment + " " + person.timestamp
+        );
+        const nameResponse = person.name;
+        const timeResponse = person.timestamp;
+        const commentResponse = person.comment;
+        createContainer(
+          nameResponse,
+          commentResponse,
+          convertTime(timeResponse)
+        );
+      });
+      console.log("arr" + showsArr);
     });
 }
 
-function postComment() {}
+function postComments(formName, formComment) {
+  const input = { name: formName, comment: formComment };
+  axios
+    .post(
+      `https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`,
+      input,
+      {
+        headers: {
+          "content-type": "application/json",
+        },
+      }
+    )
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log("error" + error);
+    });
+}
 
-// function getWeather(city) {
-//   axios
-//     .get(
-//       `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=bf87a186f6d73f42041d41193ea3d4c8`
-//     )
-//     .then((response) => {
-//       weatherArr = response.data;
-//       console.log(weatherArr);
-//       console.log(displayWeather());
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// }
+function convertTime(time) {
+  var timestamp = Number(time);
+  var date = new Date(timestamp);
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+
+  const result = year + "/" + month + "/" + day;
+  return result;
+}
