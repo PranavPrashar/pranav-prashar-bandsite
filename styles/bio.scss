@@ -102,6 +102,19 @@ body {
     line-height: 22px;
     font-size: 13px;
     margin: 0 1rem 0.25rem 1rem;
+
+    @include tablet{
+      line-height: 32px;
+      // color: blue;
+      // margin: 0 2rem 0.25rem 2rem;
+      padding: 0 3rem;
+    }
+
+    @include desktop{
+      line-height: 32px;
+      padding: 0 ;
+      // color: blue;
+    }
   }
 
   &__paragraph {
@@ -550,7 +563,7 @@ body {
 
     // border-bottom: 1.5px global.$silver solid;
     @include desktop {
-      width: 50%;
+      width: 40%;
       justify-content: center;
     }
   }
@@ -619,13 +632,14 @@ body {
       // background-color: yellow;
     }
 
+
     &--form {
       display: flex;
       flex-direction: column;
       width: 100%;
       padding-right: 1rem;
       justify-content: baseline;
-      // border-bottom: 1.5px global.$silver solid;
+      // border-bottom: 1.5px global.$silver solid; 
     }
 
     &--header {
@@ -633,6 +647,7 @@ body {
     }
 
     &--commentbutton {
+      // display: flex;
       margin: 1rem 0;
       padding: 0.5rem 1rem;
       background: global.$bandsite-black;
@@ -642,6 +657,15 @@ body {
       border-radius: 0.5rem;
       color: white;
       font-family: global.$avenirnext-regular;
+
+      @include desktop{
+        margin-left:12rem;
+        padding: 0.5rem 1rem;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+      }
     }
 
     &__top {
@@ -669,9 +693,8 @@ body {
     width: auto;
     background-color: global.$alabaster;
     border-radius: 0.5rem;
-    padding: 1rem;
+    padding-left: 1rem;
     border: solid 1px global.$mercury;
-
     &:focus {
       outline: none;
       border: global.$bandsite-black 1px solid;
@@ -697,6 +720,7 @@ body {
   }
 
   &__commentinput {
+    font-family: global.$avenirnext-regular;
     height: 20vh;
     background-color: global.$alabaster;
     border-radius: 0.5rem;
@@ -732,7 +756,7 @@ body {
     }
 
     @include desktop {
-      width: 50%;
+      width: 40%;
     }
 
     &--container {

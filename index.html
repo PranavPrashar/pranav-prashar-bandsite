@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Band Site</title>
     <link rel="stylesheet" href="./styles/bio.css" />
-    <link rel="stylesheet" href="./styles/partials/_global.scss" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- <script src="./scripts/index-page.js" defer></script> -->
   </head>
@@ -235,6 +234,7 @@
         <div class="conversation__right">
           <form id="joinConversationForm" class="conversation__right--form">
             <label for="nameInput" class="input-label">Name</label>
+            
             <input
               type="text"
               id="nameInput"
@@ -243,7 +243,6 @@
             />
 
             <label for="commentInput" class="input-label">Comment</label>
-            <!-- <input type="text" id = "conversation__commentinput" class="conversation__commentinput" placeholder="Add a new comment"> -->
             <textarea
               id="conversation__commentinput"
               class="conversation__commentinput"
@@ -261,9 +260,6 @@
       </div>
       <!-- Dynamic convestation container -->
       <div class="conversation__users"></div>
-      <!-- <div>
-
-        </div> -->
     </div>
 
     <footer class="footer">
@@ -292,7 +288,7 @@
             <!-- <h1 class="footer-lower__header uppercase">Bandsite</h1> -->
             <img
               src="../assets/logos/Logo-bandsite.svg"
-              alt=""
+              alt="Mobile Bandsite Logo"
               class="nav-bar__heading--img"
             />
           </div>
@@ -430,7 +426,7 @@
         <!-- <h1 class="footer-lower__header uppercase">Bandsite</h1> -->
         <img
           src="../assets/logos/Logo-bandsite.svg"
-          alt=""
+          alt="Footer Bandsite Logo"
           class="nav-bar__heading--img"
         />
         <h4 class="footer-lower__copyright">

@@ -11,8 +11,9 @@ formElement.addEventListener("submit", function (event) {
   const formComment = event.target.conversation__commentinput.value;
 
   //   conversationFormInput(formName, formComment);
-  postComments(formName, formComment);
-  getComments();
+  postComments(formName, formComment); // post comment to server
+  //   removeAllChildNodes(conversationUsers);
+  //   getComments();
   formElement.reset();
 });
 
@@ -94,8 +95,8 @@ function getComments() {
       console.log("error" + error);
     })
     .then((response) => {
-      console.log(response);
-      console.log(response.data);
+      //   console.log(response);
+      //   console.log(response.data);
       const myresponse = response.data;
 
       myresponse.sort(function compare(a, b) {
@@ -111,6 +112,7 @@ function getComments() {
         const nameResponse = person.name;
         const timeResponse = person.timestamp;
         const commentResponse = person.comment;
+
         createContainer(
           nameResponse,
           commentResponse,
@@ -135,6 +137,8 @@ function postComments(formName, formComment) {
     )
     .then((response) => {
       console.log(response);
+      removeAllChildNodes(conversationUsers);
+      getComments();
     })
     .catch((error) => {
       console.log("error" + error);

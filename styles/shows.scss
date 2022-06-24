@@ -178,6 +178,20 @@
       background: blue;
     }
 
+    &--tablet{
+      // background-color: green;
+
+      // @include tablet{
+      //   inline-size: 60rem;
+
+      // }
+      // @include desktop{
+      //   // background-color: blue;
+      // width:75%;
+      // padding-left: 70rem;
+      // }
+    }
+
     @include tablet {
       @include global.flexBox-row;
       padding: 1rem;
@@ -241,13 +255,14 @@
       }
 
       display: none;
-
       @include tablet {
         padding-left: 1rem;
         @include global.flexBox-row;
         justify-content: space-between;
         // width: 50%;
       }
+
+
 
       &-header {
         font-family: global.$avenirnext-regular;

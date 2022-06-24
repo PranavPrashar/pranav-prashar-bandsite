@@ -4,6 +4,10 @@ const apiKey = "cbc3f43b-2fc6-41bf-b351-fefdf1e7b32f";
 let showsArr = [];
 
 function createShowsContainer(date, venue, location) {
+  const emptyDiv = document.createElement("div");
+  emptyDiv.classList.add("testing");
+  showsContainer.appendChild(emptyDiv);
+
   const showsWrapper = document.createElement("div");
   showsWrapper.classList.add("shows__details");
 
@@ -71,6 +75,7 @@ function getShows() {
         const venue = show.place;
         const location = show.location;
         createShowsContainer(convertTime(date), venue, location);
+        const showListElement = document.querySelectorAll(".shows__details");
       });
 
       console.log("arr" + showsArr);
@@ -78,3 +83,10 @@ function getShows() {
 }
 
 getShows();
+
+console.log(showListElement);
+showListElement.addEventListener("click", (event) => {
+  if (showListElement.classList === "shows__details") {
+    console.log("Succsess");
+  }
+});
