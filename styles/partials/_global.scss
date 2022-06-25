@@ -70,10 +70,18 @@ $error-color: #D22D2D;
 .nav-bar {
     background-color: $bandsite-black;
     @include flexBox-column;
-    padding: 1rem 0;
+    padding: 1rem 0 0 0;
+    //trbl
     justify-content: center;
     align-items: center;
     color: white;
+    @include tablet{
+      padding-bottom: 0;
+    }
+
+    @include desktop{
+
+    }
   
     &__list-item{
       font-family: $avenirnext-bold;
@@ -270,6 +278,13 @@ $error-color: #D22D2D;
         color: white;
         font-family: $avenirnext-demi;
         padding-bottom: 0.5rem;
+
+        @include tablet{
+          padding-bottom: 1rem;
+        }
+        @include desktop{
+          padding-bottom: 1rem;
+        }
       }
   
       @include desktop {

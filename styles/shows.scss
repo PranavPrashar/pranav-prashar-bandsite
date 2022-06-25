@@ -166,15 +166,32 @@
     margin: 0;
     border-bottom: 1.5px global.$silver solid;
 
-    &--active{
-      // color: blue ;
-      @include global.flexBox-row;
-      padding: 1rem;
-      align-items: baseline;
-      justify-content: space-between;
-      align-content: center;
-      border-bottom: 1.5px global.$silver solid;
+    &--active {
       background-color: global.$mercury;
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+
+      @include tablet {
+        @include global.flexBox-row;
+        padding: 1rem;
+        align-items: baseline;
+        justify-content: space-between;
+        align-content: center;
+        border-bottom: 1.5px global.$silver solid;
+        background-color: global.$mercury;
+      }
+
+      @include desktop {
+        @include global.flexBox-row;
+        padding: 1rem;
+        align-items: baseline;
+        justify-content: space-between;
+        align-content: center;
+        border-bottom: 1.5px global.$silver solid;
+        background-color: global.$mercury;
+      }
+
     }
 
     // &:hover {
@@ -189,7 +206,7 @@
     //   background: blue;
     // }
 
-    &--tablet{
+    &--tablet {
       // background-color: green;
 
       // @include tablet{
@@ -208,7 +225,8 @@
       padding: 1rem;
       align-items: baseline;
       justify-content: space-between;
-      align-content: center;;
+      align-content: center;
+      ;
     }
 
     &--header {
@@ -266,6 +284,7 @@
       }
 
       display: none;
+
       @include tablet {
         padding-left: 1rem;
         @include global.flexBox-row;
