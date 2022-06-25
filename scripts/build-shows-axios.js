@@ -4,9 +4,9 @@ const apiKey = "cbc3f43b-2fc6-41bf-b351-fefdf1e7b32f";
 let showsArr = [];
 
 function createShowsContainer(date, venue, location) {
-  const emptyDiv = document.createElement("div");
-  emptyDiv.classList.add("testing");
-  showsContainer.appendChild(emptyDiv);
+  // const emptyDiv = document.createElement("div");
+  // emptyDiv.classList.add("testing");
+  // showsContainer.appendChild(emptyDiv);
 
   const showsWrapper = document.createElement("div");
   showsWrapper.classList.add("shows__details");
@@ -47,6 +47,28 @@ function createShowsContainer(date, venue, location) {
   showsWrapper.appendChild(buyTickets);
 
   showsContainer.appendChild(showsWrapper);
+
+  showsWrapper.addEventListener("click", (event) => {
+    var counter = 0;
+
+    if (showsWrapper.classList.contains("shows__details--active")) {
+      showsWrapper.classList.remove("shows__details--active");
+      showsWrapper.classList.add("shows__details");
+    } else if (showsWrapper.classList.contains("shows__details")) {
+      showsWrapper.classList.remove("shows__details");
+      showsWrapper.classList.add("shows__details--active");
+      // showsWrapper.style.backgroundColor = "#e1e1e1";
+      console.log(showsWrapper);
+      counter++;
+    }
+
+    // if(counter === 1){
+    //   showsWrapper.className == """
+    // }
+
+    // console.log(showsWrapper.classList);
+    // console.log("Succsess");
+  });
 }
 
 function convertTime(time) {
@@ -75,7 +97,8 @@ function getShows() {
         const venue = show.place;
         const location = show.location;
         createShowsContainer(convertTime(date), venue, location);
-        const showListElement = document.querySelectorAll(".shows__details");
+        // const showListElement = document.querySelector(".shows__details");
+        // console.log(showListElement);
       });
 
       console.log("arr" + showsArr);
@@ -83,10 +106,3 @@ function getShows() {
 }
 
 getShows();
-
-console.log(showListElement);
-showListElement.addEventListener("click", (event) => {
-  if (showListElement.classList === "shows__details") {
-    console.log("Succsess");
-  }
-});
