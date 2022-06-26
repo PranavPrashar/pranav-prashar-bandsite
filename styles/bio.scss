@@ -103,16 +103,16 @@ body {
     font-size: 13px;
     margin: 0 1rem 0.25rem 1rem;
 
-    @include tablet{
+    @include tablet {
       line-height: 32px;
       // color: blue;
       // margin: 0 2rem 0.25rem 2rem;
       padding: 0 3rem;
     }
 
-    @include desktop{
+    @include desktop {
       line-height: 32px;
-      padding: 0 ;
+      padding: 0;
       // color: blue;
     }
   }
@@ -658,8 +658,8 @@ body {
       color: white;
       font-family: global.$avenirnext-regular;
 
-      @include desktop{
-        margin-left:12rem;
+      @include desktop {
+        margin-left: 12rem;
         padding: 0.5rem 1rem;
         width: 50%;
         display: flex;
@@ -695,6 +695,7 @@ body {
     border-radius: 0.5rem;
     padding-left: 1rem;
     border: solid 1px global.$mercury;
+
     &:focus {
       outline: none;
       border: global.$bandsite-black 1px solid;
