@@ -1,0 +1,1140 @@
+@font-face {
+  font-family: avenirnext-bold;
+  src: url(/assets/fonts/AvenirNextLTPro-Bold.otf);
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: avenirnext-regular;
+  src: url(/assets/fonts/AvenirNextLTPro-Regular.otf);
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: avenirnext-demi;
+  src: url(/assets/fonts/AvenirNextLTPro-Demi.otf);
+  font-weight: 600;
+}
+.nav-bar {
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0 0 0;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+@media (min-width: 768px) {
+  .nav-bar {
+    padding-bottom: 0;
+  }
+}
+.nav-bar__list-item {
+  font-family: "avenirnext-bold";
+}
+.nav-bar__list-item:hover {
+  color: white;
+  font-family: "avenirnext-bold";
+}
+.nav-bar__list-item:not(:active) {
+  color: #e1e1e1;
+}
+.nav-bar__top {
+  padding-top: 1rem;
+}
+@media (min-width: 1280px) {
+  .nav-bar {
+    padding-left: 4rem;
+  }
+  .nav-bar__list-item {
+    font-family: "avenirnext-bold";
+  }
+  .nav-bar__list-item:hover {
+    color: white;
+    font-family: "avenirnext-bold";
+  }
+  .nav-bar__list-item:not(:active) {
+    color: #e1e1e1;
+  }
+}
+@media (min-width: 768px) {
+  .nav-bar {
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: row;
+  }
+  .nav-bar__top {
+    align-items: baseline;
+    align-content: center;
+    justify-content: center;
+    vertical-align: middle;
+    padding-left: 1rem;
+  }
+  .nav-bar__heading {
+    font-family: "avenirnext-regular";
+    padding: 1rem;
+    text-transform: uppercase !important;
+    align-content: center;
+    align-items: baseline;
+  }
+  .nav-bar__menu-tablet {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+    width: 25% !important;
+    padding-left: 1rem;
+  }
+  .nav-bar__list {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 0;
+  }
+  .nav-bar__list-container-selected {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    text-align: center;
+    border-bottom: 0.25rem white solid;
+  }
+  .nav-bar__list-item {
+    width: 100%;
+    padding-right: 2rem;
+    border: none;
+  }
+  .nav-bar__list-item:hover {
+    color: white;
+    font-family: "avenirnext-bold";
+  }
+  .nav-bar__list-item:not(:active) {
+    color: #e1e1e1;
+  }
+}
+@media (min-width: 768px) and (min-width: 768px) {
+  .nav-bar__list-item:hover {
+    color: white;
+    font-family: "avenirnext-bold";
+  }
+  .nav-bar__list-item:not(:active) {
+    color: #e1e1e1;
+  }
+}
+@media (min-width: 768px) and (min-width: 1280px) {
+  .nav-bar__list-item:hover {
+    color: white;
+    font-family: "avenirnext-bold";
+  }
+  .nav-bar__list-item:not(:active) {
+    color: #e1e1e1;
+  }
+}
+@media (min-width: 1280px) {
+  .nav-bar {
+    align-items: center;
+  }
+}
+.nav-bar-top {
+  margin: 0;
+}
+.nav-bar__heading {
+  font-family: "avenirnext-regular";
+  margin: 0.5rem 0 0 0;
+  text-transform: uppercase !important;
+}
+@media (min-width: 1280px) {
+  .nav-bar__heading {
+    padding-left: 10rem;
+    font-size: 36px;
+  }
+}
+.nav-bar__menu {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+@media (min-width: 1280px) {
+  .nav-bar__menu {
+    font-size: 1rem;
+  }
+}
+.nav-bar__list {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+.nav-bar__list-container {
+  display: flex;
+  flex-direction: column;
+  color: #fafafa;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 50%;
+  text-align: center;
+}
+.nav-bar__list-container:hover {
+  color: white;
+  font-family: "avenirnext-regular";
+}
+.nav-bar__list-container-selected {
+  border-bottom: 0.25rem white solid;
+}
+.nav-bar__list-item {
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  font-family: "avenirnext-demi";
+  padding-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .nav-bar__list-item {
+    padding-bottom: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav-bar__list-item {
+    padding-bottom: 1rem;
+  }
+}
+.footer {
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+}
+.footer-testing {
+  justify-content: flex-end;
+}
+.footer__header {
+  color: white;
+  font-family: "avenirnext-bold";
+  -webkit-text-size-adjust: 36px;
+     -moz-text-size-adjust: 36px;
+          text-size-adjust: 36px;
+  line-height: 44px;
+  margin: 1rem 0 1rem 1rem;
+}
+@media (min-width: 768px) {
+  .footer__header {
+    display: none;
+  }
+}
+.footer__social-media {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  margin-left: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__social-media {
+    display: none;
+  }
+}
+.footer__social-media__icon {
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+.footer-header__small {
+  color: white;
+  font-family: "avenirnext-demi";
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: capitalize;
+  margin-left: 1rem;
+  margin: 0.25rem 0 0.25rem 1rem;
+}
+.footer-address {
+  color: white;
+  margin: 1rem 0 0.25rem 1rem;
+}
+.footer-address__header {
+  text-transform: capitalize;
+  margin: 0;
+  font-family: "avenirnext-regular";
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+.footer-address__header-uppercase {
+  text-transform: uppercase !important;
+}
+.footer-address__header-extra {
+  padding-top: 1rem;
+  text-transform: none;
+}
+@media (min-width: 768px) {
+  .footer-two {
+    display: none;
+  }
+}
+.footer-three {
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer-three {
+    display: none;
+  }
+}
+.footer-four {
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer-four {
+    display: none;
+  }
+}
+.footer-lower {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.footer-lower__header {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "avenirnext-regular";
+  color: white;
+}
+.footer-lower__copyright {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenirnext-regular";
+  color: white;
+}
+@media (min-width: 768px) {
+  .footer-lower {
+    display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-lower__header {
+    padding-right: 1vw;
+  }
+  .footer-lower__copyright {
+    padding-left: 12vh;
+  }
+}
+
+.footer-mobile {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+  .footer-mobile__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .footer-mobile__header {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-family: "avenirnext-bold";
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .footer-mobile__social {
+    display: flex;
+    flex-direction: row;
+  }
+  .footer-mobile__icon {
+    padding-left: 1rem;
+  }
+  .footer-mobile-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer-mobile-right {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding-right: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-mobile {
+    padding: 1rem 7vw;
+  }
+  .footer-mobile__header {
+    color: white;
+  }
+}
+
+.footer-tablet__team {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer-tablet__team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  .footer-tablet__team__left {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-tablet__team__center {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-tablet__team__right {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-tablet__team {
+    padding: 0 12vh;
+  }
+}
+
+.footer-tablet__lower {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer-tablet__lower {
+    display: flex;
+    padding: 1rem 0 0 1rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.uppercase {
+  text-transform: uppercase !important;
+}
+
+.bees-knees {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: url(/assets/images/hero-bio.jpg);
+  background-blend-mode: multiply;
+  background-color: rgba(50, 50, 50, 0.5);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 80%;
+  height: 10rem;
+}
+.bees-knees__header {
+  padding-left: 1rem;
+  color: white;
+  font-family: "avenirnext-demi";
+  text-transform: capitalize;
+}
+@media (min-width: 768px) {
+  .bees-knees {
+    height: 60vh;
+  }
+  .bees-knees__header {
+    font-size: 36px;
+    line-height: 44px;
+    font-family: "avenirnext-bold";
+  }
+}
+@media (min-width: 1280px) {
+  .bees-knees__header {
+    padding-left: 10rem;
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+
+.about-musicians {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding-top: 1.5rem;
+}
+.about-musicians__header {
+  font-family: "avenirnext-demi";
+  color: #323232;
+  margin: 0.25rem 0 0.25rem 1rem;
+  font-size: 36px;
+  line-height: 44px;
+}
+.about-musicians__header-smaller {
+  line-height: 22px;
+  font-family: "avenirnext-demi";
+  font-size: 14px;
+  text-transform: capitalize;
+  padding: 0.25rem 0 0.25rem 1rem;
+}
+.about-musicians_img-tablet {
+  display: none;
+}
+.about-musicians__img-band {
+  width: auto;
+  margin: 0.5rem 1rem;
+}
+.about-musicians__qoute {
+  font-family: "avenirnext-demi";
+  line-height: 22px;
+  font-size: 13px;
+  margin: 0 1rem 0.25rem 1rem;
+}
+@media (min-width: 768px) {
+  .about-musicians__qoute {
+    line-height: 32px;
+    padding: 0 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .about-musicians__qoute {
+    line-height: 32px;
+    padding: 0;
+  }
+}
+.about-musicians__paragraph {
+  font-family: "avenirnext-regular";
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0 1rem 1rem 1rem;
+}
+.about-musicians-tablet__view {
+  display: none;
+}
+.about-musicians__header-tablet {
+  display: none;
+}
+@media (min-width: 768px) {
+  .about-musicians__header {
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-top: 1rem;
+  }
+  .about-musicians_img-tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .about-musicians__img-band-tablet {
+    width: 75%;
+  }
+  .about-musicians__img-band {
+    display: none;
+  }
+  .about-musicians__qoute {
+    margin: 0.25rem 6.5rem 0.25rem 6.5rem;
+    font-size: 28px;
+  }
+  .about-musicians__qoute--lower {
+    font-size: 1rem;
+    line-height: 20px;
+    font-family: "avenirnext-demi";
+  }
+  .about-musicians .tablet-paragraph {
+    display: none;
+  }
+  .about-musicians-tablet__view {
+    display: flex;
+    margin: 0.25rem 6rem 0.25rem 6rem;
+    align-items: baseline;
+  }
+  .about-musicians__header-tablet {
+    font-family: "avenirnext-demi";
+    color: #323232;
+    text-transform: capitalize;
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    padding-left: 6.5rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .about-musicians__header-smaller {
+    color: blue;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1280px) {
+  .about-musicians__header {
+    margin-left: 15rem;
+  }
+  .about-musicians__img-band-tablet {
+    width: 50%;
+  }
+  .about-musicians__qoute {
+    margin: 0.25rem 30vw 0.25rem 25vw;
+    text-align: left;
+  }
+  .about-musicians__header-tablet {
+    padding-left: 25vw;
+    font-size: 24px;
+  }
+  .about-musicians__paragraph {
+    font-family: "avenirnext-regular";
+    font-size: 18px;
+    line-height: 32px;
+  }
+  .about-musicians .paragraph-left {
+    padding-left: 20vw;
+  }
+  .about-musicians .paragraph-right {
+    padding-right: 20vw;
+  }
+}
+
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  background-color: #fafafa;
+  flex-wrap: none;
+  padding-top: 1rem;
+}
+.photo-gallery__mobile {
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.photo-gallery__header {
+  font-family: "avenirnext-demi";
+  color: #323232;
+  margin: 0.25rem 0 0 1rem;
+  font-size: 24px;
+  line-height: 32px;
+}
+.photo-gallery__img {
+  justify-content: center;
+  width: 94%;
+  margin: 0.5rem 1rem;
+}
+@media (min-width: 768px) {
+  .photo-gallery__header {
+    padding-top: 2rem;
+    font-size: 24px;
+  }
+  .photo-gallery__mobile {
+    display: none;
+  }
+  .photo-gallery__tablet {
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 1rem;
+  }
+  .photo-gallery__tablet-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 1280px) {
+  .photo-gallery__header {
+    font-size: 36px;
+    line-height: 44px;
+    padding-left: 10rem;
+  }
+  .photo-gallery__tablet {
+    margin: 1rem 10rem;
+  }
+}
+
+.footer {
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+}
+.footer-testing {
+  justify-content: flex-end;
+}
+.footer__header {
+  color: white;
+  font-family: "avenirnext-bold";
+  -webkit-text-size-adjust: 36px;
+     -moz-text-size-adjust: 36px;
+          text-size-adjust: 36px;
+  line-height: 44px;
+  margin: 1rem 0 1rem 1rem;
+}
+@media (min-width: 768px) {
+  .footer__header {
+    display: none;
+  }
+}
+.footer__social-media {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  margin-left: 1rem;
+}
+@media (min-width: 768px) {
+  .footer__social-media {
+    display: none;
+  }
+}
+.footer__social-media__icon {
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+.footer-header__small {
+  color: white;
+  font-family: "avenirnext-demi";
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: capitalize;
+  margin-left: 1rem;
+  margin: 0.25rem 0 0.25rem 1rem;
+}
+.footer-address {
+  color: white;
+  margin: 1rem 0 0.25rem 1rem;
+}
+.footer-address__header {
+  text-transform: capitalize;
+  margin: 0;
+  font-family: "avenirnext-regular";
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+.footer-address__header-uppercase {
+  text-transform: uppercase !important;
+}
+.footer-address__header-extra {
+  padding-top: 1rem;
+  text-transform: none;
+}
+@media (min-width: 768px) {
+  .footer-two {
+    display: none;
+  }
+}
+.footer-three {
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer-three {
+    display: none;
+  }
+}
+.footer-four {
+  padding-top: 1rem;
+}
+@media (min-width: 768px) {
+  .footer-four {
+    display: none;
+  }
+}
+.footer-lower {
+  padding-left: 1rem;
+  padding-top: 1rem;
+}
+.footer-lower__header {
+  font-size: 24px;
+  line-height: 32px;
+  font-family: "avenirnext-regular";
+  color: white;
+}
+.footer-lower__copyright {
+  font-size: 14px;
+  line-height: 22px;
+  font-family: "avenirnext-regular";
+  color: white;
+}
+@media (min-width: 768px) {
+  .footer-lower {
+    display: none;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-lower__header {
+    padding-right: 1vw;
+  }
+  .footer-lower__copyright {
+    padding-left: 12vh;
+  }
+}
+
+.footer-mobile {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+  }
+  .footer-mobile__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .footer-mobile__header {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-family: "avenirnext-bold";
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .footer-mobile__social {
+    display: flex;
+    flex-direction: row;
+  }
+  .footer-mobile__icon {
+    padding-left: 1rem;
+  }
+  .footer-mobile-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer-mobile-right {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    padding-right: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-mobile {
+    padding: 1rem 7vw;
+  }
+  .footer-mobile__header {
+    color: white;
+  }
+}
+
+.footer-tablet__team {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer-tablet__team {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+  .footer-tablet__team__left {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-tablet__team__center {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-tablet__team__right {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1280px) {
+  .footer-tablet__team {
+    padding: 0 12vh;
+  }
+}
+
+.footer-tablet__lower {
+  display: none;
+}
+@media (min-width: 768px) {
+  .footer-tablet__lower {
+    display: flex;
+    padding: 1rem 0 0 1rem;
+  }
+}
+
+.input-label {
+  text-transform: uppercase;
+  font-family: "avenirnext-demi";
+  line-height: 20px;
+  padding: 0.25rem 0;
+  color: rgba(175, 175, 175, 0.6862745098);
+}
+
+.conversation {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  justify-content: center;
+}
+@media (min-width: 1280px) {
+  .conversation {
+    display: flex;
+    align-items: center;
+  }
+}
+.conversation__header {
+  font-family: "avenirnext-demi";
+  color: #323232;
+  margin: 1rem 0 0 1rem;
+  font-size: 24px;
+  line-height: 32px;
+}
+@media (min-width: 1280px) {
+  .conversation__header {
+    padding-left: 10rem;
+    display: flex;
+    align-items: flex-start;
+    font-size: 32px;
+    width: 100%;
+  }
+}
+.conversation__form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 1rem;
+  justify-content: baseline;
+}
+@media (min-width: 1280px) {
+  .conversation__form {
+    width: 40%;
+    justify-content: center;
+  }
+}
+.conversation__img {
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  flex-direction: row;
+  background: url(../assets/images/Mohan-muruge.jpg);
+  background-color: #afafaf;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media (min-width: 768px) {
+  .conversation__img {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+.conversation__left {
+  display: flex;
+  flex-direction: row;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+}
+@media (min-width: 768px) {
+  .conversation__left {
+    padding-left: 3rem;
+  }
+}
+.conversation__top {
+  padding: 1rem 0 0 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.conversation__top--img {
+  display: flex;
+  flex-direction: row;
+}
+.conversation__top--left {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.conversation__right {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 1rem;
+  justify-content: baseline;
+  border-bottom: 1.5px #afafaf solid;
+}
+.conversation__right--form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-right: 1rem;
+  justify-content: baseline;
+}
+.conversation__right--header {
+  margin: 0;
+}
+.conversation__right--commentbutton {
+  margin: 1rem 0;
+  padding: 0.5rem 1rem;
+  background: #323232;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 0.5rem #323232 solid;
+  border-radius: 0.5rem;
+  color: white;
+  font-family: "avenirnext-regular";
+}
+@media (min-width: 1280px) {
+  .conversation__right--commentbutton {
+    margin-left: 12rem;
+    padding: 0.5rem 1rem;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+}
+.conversation__right__top {
+  display: flex;
+  flex-direction: row;
+}
+.conversation__right__bottom {
+  display: flex;
+  flex-direction: row;
+}
+.conversation__form {
+  display: flex;
+  flex-direction: row;
+  padding-left: 1rem;
+  padding: 0 1rem;
+}
+.conversation__nameinput {
+  height: 2rem;
+  width: auto;
+  background-color: #fafafa;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  border: solid 1px #e1e1e1;
+}
+.conversation__nameinput:focus {
+  outline: none;
+  border: #323232 1px solid;
+  background-color: #fafafa;
+}
+.conversation__nameinput:invalid {
+  outline: none;
+  border: #D22D2D;
+  background-color: #fafafa;
+}
+.conversation__nameinput:valid {
+  background-color: #fafafa;
+}
+.conversation__nameinput:-moz-placeholder-shown {
+  color: #000000;
+  font-family: "avenirnext-regular";
+}
+.conversation__nameinput:-ms-input-placeholder {
+  color: #000000;
+  font-family: "avenirnext-regular";
+}
+.conversation__nameinput:placeholder-shown {
+  color: #000000;
+  font-family: "avenirnext-regular";
+}
+.conversation__commentinput {
+  font-family: "avenirnext-regular";
+  height: 20vh;
+  background-color: #fafafa;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: solid 1px #e1e1e1;
+}
+.conversation__commentinput:focus {
+  outline: none;
+  border: #323232 1px solid;
+}
+.conversation__commentinput::-moz-placeholder {
+  color: #000000;
+  font-family: "avenirnext-regular";
+  display: flex;
+  position: absolute;
+  top: 1px;
+  font-size: 12px;
+}
+.conversation__commentinput:-ms-input-placeholder {
+  color: #000000;
+  font-family: "avenirnext-regular";
+  display: flex;
+  position: absolute;
+  top: 1px;
+  font-size: 12px;
+}
+.conversation__commentinput::placeholder {
+  color: #000000;
+  font-family: "avenirnext-regular";
+  display: flex;
+  position: absolute;
+  top: 1px;
+  font-size: 12px;
+}
+.conversation__users {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .conversation__users {
+    padding-left: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .conversation__users {
+    width: 40%;
+  }
+}
+.conversation__users--container {
+  padding: 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+}
+.conversation__users--img {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1.5px #afafaf solid;
+}
+.conversation__users--details {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+  border-bottom: 1.5px #afafaf solid;
+}
+.conversation__users .details__wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  justify-content: space-between;
+}
+.conversation__users .details__wrapper--name {
+  font-family: "avenirnext-demi";
+}
+.conversation__users .details__wrapper--date {
+  font-family: "avenirnext-regular";
+  color: #afafaf;
+}
+.conversation__users .details-paragraph {
+  padding-top: 0.5rem;
+  font-family: "avenirnext-regular";
+}
+.conversation .details-wrapper {
+  display: flex;
+  flex-direction: row;
+}/*# sourceMappingURL=bio.css.map */
